@@ -1,0 +1,5 @@
+{
+  "status": "interrupted",
+  "reason": "CPU runtime configuration adjusted after first completed response; partial results retained; full v1 evaluation restarted.",
+  "accepted": false
+}

@@ -1,0 +1,5 @@
+{
+  "status": "interrupted",
+  "reason": "User requested notebook-driven execution; stopped live evaluation and preserved partial responses.",
+  "accepted": false
+}

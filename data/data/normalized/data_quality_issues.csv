@@ -1,0 +1,80 @@
+issue_id,table_name,row_id,source_row,field_name,issue_type,severity,original_value,normalized_value,message,recommended_action,is_blocking
+DQ-00001,usuarios,1,2,capacidad_maxima,missing_value,warning,,,usuarios.capacidad_maxima: missing_value,Review source and business rule; retain row,True
+DQ-00002,usuarios,6,7,capacidad_maxima,missing_value,warning,,,usuarios.capacidad_maxima: missing_value,Review source and business rule; retain row,True
+DQ-00003,usuarios,14,15,fecha_ingreso,missing_value,warning,,,usuarios.fecha_ingreso: missing_value,Review source and business rule; retain row,False
+DQ-00004,usuarios,18,19,zona,missing_value,warning,,,usuarios.zona: missing_value,Review source and business rule; retain row,True
+DQ-00005,equipos,5,6,lider_id,missing_value,warning,,,equipos.lider_id: missing_value,Review source and business rule; retain row,False
+DQ-00006,registros,3,4,zona,missing_value,warning,,,registros.zona: missing_value,Review source and business rule; retain row,True
+DQ-00007,registros,6,7,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00008,registros,8,9,sector,missing_value,warning,,,registros.sector: missing_value,Review source and business rule; retain row,True
+DQ-00009,registros,10,11,ingresos_estimados,missing_value,warning,,,registros.ingresos_estimados: missing_value,Review source and business rule; retain row,False
+DQ-00010,registros,11,12,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00011,registros,12,13,zona,missing_value,warning,,,registros.zona: missing_value,Review source and business rule; retain row,True
+DQ-00012,registros,14,15,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00013,registros,15,16,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00014,registros,17,18,fecha_creacion,future_date,warning,2026-09-19,2026-09-19,registros.fecha_creacion: future_date,Review source and business rule; retain row,False
+DQ-00015,registros,18,19,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00016,registros,23,24,sector,missing_value,warning,,,registros.sector: missing_value,Review source and business rule; retain row,True
+DQ-00017,registros,23,24,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00018,registros,25,26,ingresos_estimados,missing_value,warning,,,registros.ingresos_estimados: missing_value,Review source and business rule; retain row,False
+DQ-00019,registros,27,28,zona,missing_value,warning,,,registros.zona: missing_value,Review source and business rule; retain row,True
+DQ-00020,registros,32,33,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00021,registros,32,33,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00022,registros,36,37,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00023,registros,38,39,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00024,registros,41,42,zona,missing_value,warning,,,registros.zona: missing_value,Review source and business rule; retain row,True
+DQ-00025,registros,41,42,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00026,registros,47,48,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00027,registros,50,51,sector,missing_value,warning,,,registros.sector: missing_value,Review source and business rule; retain row,True
+DQ-00028,registros,51,52,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00029,registros,53,54,fecha_creacion,future_date,warning,2026-09-27,2026-09-27,registros.fecha_creacion: future_date,Review source and business rule; retain row,False
+DQ-00030,registros,55,56,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00031,registros,59,60,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00032,registros,61,62,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00033,registros,62,63,zona,missing_value,warning,,,registros.zona: missing_value,Review source and business rule; retain row,True
+DQ-00034,registros,67,68,ingresos_estimados,missing_value,warning,,,registros.ingresos_estimados: missing_value,Review source and business rule; retain row,False
+DQ-00035,registros,72,73,sector,missing_value,warning,,,registros.sector: missing_value,Review source and business rule; retain row,True
+DQ-00036,registros,77,78,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00037,registros,78,79,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00038,registros,79,80,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00039,registros,83,84,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00040,registros,84,85,zona,missing_value,warning,,,registros.zona: missing_value,Review source and business rule; retain row,True
+DQ-00041,registros,88,89,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00042,registros,89,90,ingresos_estimados,missing_value,warning,,,registros.ingresos_estimados: missing_value,Review source and business rule; retain row,False
+DQ-00043,registros,89,90,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00044,registros,90,91,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00045,registros,91,92,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00046,registros,93,94,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00047,registros,93,94,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00048,registros,95,96,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00049,registros,96,97,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00050,registros,97,98,sector,missing_value,warning,,,registros.sector: missing_value,Review source and business rule; retain row,True
+DQ-00051,registros,101,102,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00052,registros,102,103,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00053,registros,105,106,zona,missing_value,warning,,,registros.zona: missing_value,Review source and business rule; retain row,True
+DQ-00054,registros,110,111,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00055,registros,111,112,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00056,registros,119,120,sector,missing_value,warning,,,registros.sector: missing_value,Review source and business rule; retain row,True
+DQ-00057,registros,122,123,ingresos_estimados,missing_value,warning,,,registros.ingresos_estimados: missing_value,Review source and business rule; retain row,False
+DQ-00058,registros,127,128,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00059,registros,128,129,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00060,registros,131,132,zona,missing_value,warning,,,registros.zona: missing_value,Review source and business rule; retain row,True
+DQ-00061,registros,135,136,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00062,registros,142,143,empleados,missing_value,warning,,,registros.empleados: missing_value,Review source and business rule; retain row,False
+DQ-00063,registros,163,164,notas,missing_value,warning,,,registros.notas: missing_value,Review source and business rule; retain row,False
+DQ-00064,ausencias,1,2,hasta,future_date,warning,2026-09-25,2026-09-25,ausencias.hasta: future_date,Review source and business rule; retain row,False
+DQ-00065,ausencias,4,5,desde,future_date,warning,2026-09-21,2026-09-21,ausencias.desde: future_date,Review source and business rule; retain row,False
+DQ-00066,ausencias,4,5,hasta,future_date,warning,2026-10-02,2026-10-02,ausencias.hasta: future_date,Review source and business rule; retain row,False
+DQ-00067,ausencias,8,9,desde,future_date,warning,2026-09-28,2026-09-28,ausencias.desde: future_date,Review source and business rule; retain row,False
+DQ-00068,ausencias,8,9,hasta,future_date,warning,2026-10-05,2026-10-05,ausencias.hasta: future_date,Review source and business rule; retain row,False
+DQ-00069,registros,2,3,nit,duplicate_nit,error,955278388-6,9552783886,registros.nit: duplicate_nit,Review; do not merge or delete,True
+DQ-00070,registros,165,166,nit,duplicate_nit,error,955278388-6,9552783886,registros.nit: duplicate_nit,Review; do not merge or delete,True
+DQ-00071,registros,31,32,nit,duplicate_nit,error,950445842-8,9504458428,registros.nit: duplicate_nit,Review; do not merge or delete,True
+DQ-00072,registros,166,167,nit,duplicate_nit,error,950445842-8,9504458428,registros.nit: duplicate_nit,Review; do not merge or delete,True
+DQ-00073,registros,74,75,nit,duplicate_nit,error,982752478-1,9827524781,registros.nit: duplicate_nit,Review; do not merge or delete,True
+DQ-00074,registros,167,168,nit,duplicate_nit,error,982752478-1,9827524781,registros.nit: duplicate_nit,Review; do not merge or delete,True
+DQ-00075,usuarios,17,18,equipo_id,orphan_reference,error,99,99,usuarios.equipo_id: orphan_reference,Review; do not merge or delete,True
+DQ-00076,equipos,5,6,lider_id,missing_foreign_key,error,,,equipos.lider_id: missing_foreign_key,Review; do not merge or delete,True
+DQ-00077,registros,165,166,notas,possible_duplicate_note,error,"Posible duplicado, entró por otra fuente.","Posible duplicado, entró por otra fuente.",registros.notas: possible_duplicate_note,Review; do not merge or delete,True
+DQ-00078,registros,166,167,notas,possible_duplicate_note,error,"Posible duplicado, entró por otra fuente.","Posible duplicado, entró por otra fuente.",registros.notas: possible_duplicate_note,Review; do not merge or delete,True
+DQ-00079,registros,167,168,notas,possible_duplicate_note,error,"Posible duplicado, entró por otra fuente.","Posible duplicado, entró por otra fuente.",registros.notas: possible_duplicate_note,Review; do not merge or delete,True

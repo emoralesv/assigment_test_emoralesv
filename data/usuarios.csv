@@ -1,0 +1,19 @@
+id,nombre,email,rol,equipo_id,zona,segmento_experto,capacidad_maxima,fecha_ingreso,activo
+1,Diana Marcela Ospina,diana.ospina@empresa.co,admin,,Centro,,,2019-02-11,true
+2,Carlos Mauricio Pardo,carlos.pardo@empresa.co,lider,1,Centro,corporativo,40,2020-06-01,true
+3,Juliana Ríos Gaviria,juliana.rios@empresa.co,vendedor,1,Centro,corporativo,35,2021-03-15,true
+4,Nicolás Restrepo Vélez,nicolas.restrepo@empresa.co,vendedor,1,centro,corporativo,35,2020-08-03,false
+5,Paula Andrea Cárdenas,paula.cardenas@empresa.co,lider,2,Centro,pyme,45,2019-11-20,true
+6,Andrés Felipe Cuéllar,andres.cuellar@empresa.co,vendedor,2,CENTRO,pyme,,2024-01-08,true
+7,Laura Bermúdez Sáenz,laura.bermudez@empresa.co,vendedor,2,Centro,pyme,0,2026-08-24,true
+8,Santiago Mejía Botero,santiago.mejia@empresa.co,vendedor,2,Centro,pyme,45,2023-05-02,true
+9,Mónica Álvarez Uribe,monica.alvarez@empresa.co,lider,3,Antioquia,industrial,40,2018-09-17,true
+10,Jorge Iván Arango,jorge.arango@empresa.co,vendedor,3,ANTIOQUIA,industrial,40,2022-02-14,true
+11,Valentina Zapata Ruiz,valentina.zapata@empresa.co,vendedor,3,Antioquia,pyme,40,2026-07-06,true
+12,Ricardo Lozano Pineda,ricardo.lozano@empresa.co,lider,4,Occidente,corporativo,38,2020-01-13,true
+13,Catalina Vargas Nieto,catalina.vargas@empresa.co,vendedor,4,Occidente,pyme,38,2023-10-30,true
+14,Óscar Hernán Salazar,oscar.salazar@empresa.co,vendedor,4,occidente,industrial,38,,true
+15,Marcela Fonseca Prieto,marcela.fonseca@empresa.co,vendedor,5,Costa,pyme,42,2021-07-19,true
+16,Julián Camargo Peña,julian.camargo@empresa.co,vendedor,5,costa,corporativo,42,2024-04-22,true
+17,Daniela Quintero Ríos,daniela.quintero@empresa.co,vendedor,99,Costa,pyme,42,2025-02-10,true
+18,Felipe Andrade Mora,felipe.andrade@empresa.co,vendedor,1,,corporativo,35,2022-11-28,true

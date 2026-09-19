@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sales-assignment-system"
+version = "0.1.0"
+description = "Sistema de asignación comercial con API, normalización y simulación."
+requires-python = ">=3.11"
+dynamic = ["dependencies"]
+
+[tool.setuptools]
+packages = ["normalization", "project.api", "project.assignment_engine", "project.database", "project.frontend", "project.llm_service"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}

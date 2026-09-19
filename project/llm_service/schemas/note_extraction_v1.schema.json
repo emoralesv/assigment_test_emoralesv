@@ -1,0 +1,251 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "requirements": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "seniority_requested",
+          "sector_expertise_requested",
+          "technical_expertise"
+        ]
+      }
+    },
+    "signals": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "unvalidated_source",
+          "former_customer",
+          "price_sensitive",
+          "competitive_process",
+          "existing_contract",
+          "referral_from_current_account",
+          "low_interest",
+          "possible_duplicate"
+        ]
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "do_not_contact",
+          "contact_after_time"
+        ]
+      }
+    },
+    "priority": {
+      "enum": [
+        "low",
+        "normal",
+        "high",
+        "future"
+      ]
+    },
+    "action": {
+      "enum": [
+        "continue",
+        "validate_first",
+        "schedule_later",
+        "block",
+        "duplicate_review"
+      ]
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "unvalidated_source": {
+          "type": "boolean"
+        },
+        "former_customer": {
+          "type": "boolean"
+        },
+        "price_sensitive": {
+          "type": "boolean"
+        },
+        "competitive_process": {
+          "type": "boolean"
+        },
+        "existing_contract": {
+          "type": "boolean"
+        },
+        "referral_from_current_account": {
+          "type": "boolean"
+        },
+        "low_interest": {
+          "type": "boolean"
+        },
+        "seniority_requested": {
+          "type": "boolean"
+        },
+        "sector_expertise_requested": {
+          "type": "boolean"
+        },
+        "do_not_contact": {
+          "type": "boolean"
+        },
+        "possible_duplicate": {
+          "type": "boolean"
+        },
+        "requires_manual_review": {
+          "type": "boolean"
+        },
+        "account_complexity": {
+          "enum": [
+            "standard",
+            "high",
+            "unknown"
+          ]
+        },
+        "urgency": {
+          "enum": [
+            "low",
+            "normal",
+            "high",
+            "future"
+          ]
+        },
+        "preferred_contact_channel": {
+          "enum": [
+            "phone",
+            "email",
+            "whatsapp",
+            null
+          ]
+        },
+        "data_confidence": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "assignment_action": {
+          "enum": [
+            "continue",
+            "validate_first",
+            "schedule_later",
+            "block",
+            "duplicate_review"
+          ]
+        },
+        "decision_maker_type": {
+          "enum": [
+            "owner",
+            null
+          ]
+        },
+        "technical_expertise": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "decision_window": {
+          "enum": [
+            "this_month",
+            "december",
+            null
+          ]
+        },
+        "contact_after_time": {
+          "enum": [
+            "14:00",
+            null
+          ]
+        },
+        "site_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "competitor_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      },
+      "required": [
+        "unvalidated_source",
+        "former_customer",
+        "price_sensitive",
+        "competitive_process",
+        "existing_contract",
+        "referral_from_current_account",
+        "low_interest",
+        "seniority_requested",
+        "sector_expertise_requested",
+        "do_not_contact",
+        "possible_duplicate",
+        "requires_manual_review",
+        "account_complexity",
+        "urgency",
+        "preferred_contact_channel",
+        "data_confidence",
+        "assignment_action",
+        "decision_maker_type",
+        "technical_expertise",
+        "decision_window",
+        "contact_after_time",
+        "site_count",
+        "competitor_count"
+      ]
+    },
+    "needs_review": {
+      "type": "boolean"
+    },
+    "reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "UNVALIDATED_SOURCE",
+          "FORMER_CUSTOMER",
+          "PRICE_SENSITIVE",
+          "COMPETITIVE_PROCESS",
+          "EXISTING_CONTRACT",
+          "REFERRAL_FROM_CURRENT_ACCOUNT",
+          "LOW_INTEREST",
+          "SENIORITY_REQUESTED",
+          "SECTOR_EXPERTISE_REQUESTED",
+          "DO_NOT_CONTACT",
+          "POSSIBLE_DUPLICATE",
+          "REQUIRES_MANUAL_REVIEW",
+          "COMPLEX_ACCOUNT",
+          "URGENCY",
+          "CONTACT_CHANNEL",
+          "DATA_CONFIDENCE",
+          "ACTION",
+          "OWNER_DECISION_MAKER",
+          "ENERGY_EFFICIENCY",
+          "DECISION_WINDOW",
+          "CONTACT_AFTER_TIME",
+          "SITE_COUNT",
+          "COMPETITOR_COUNT"
+        ]
+      }
+    }
+  },
+  "required": [
+    "requirements",
+    "signals",
+    "constraints",
+    "priority",
+    "action",
+    "details",
+    "needs_review",
+    "reason_codes"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

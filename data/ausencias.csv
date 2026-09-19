@@ -1,0 +1,9 @@
+id,usuario_id,desde,hasta,motivo
+1,3,2026-09-14,2026-09-25,Vacaciones
+2,10,2026-09-16,2026-09-18,Incapacidad
+3,13,2026-08-03,2026-08-17,Vacaciones
+4,16,2026-09-21,2026-10-02,Vacaciones
+5,8,2026-07-01,2026-07-15,Licencia no remunerada
+6,11,2026-09-15,,Incapacidad
+7,15,2026-06-10,2026-06-12,Calamidad doméstica
+8,6,2026-09-28,2026-10-05,Vacaciones

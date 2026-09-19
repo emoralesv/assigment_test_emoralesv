@@ -1,0 +1,416 @@
+{
+  "started_at": "2026-09-18T07:28:55.893775+00:00",
+  "completed_at": "2026-09-18T07:28:56.468537+00:00",
+  "environment": "local",
+  "database_target": {
+    "host": "127.0.0.1",
+    "port": 15432,
+    "database": "sales_assignment_local",
+    "schema": "sales_assignment"
+  },
+  "normalization_run_id": "068e548c-bb26-479f-9c6e-04a044293c8f",
+  "input_files": [
+    "actividad.csv",
+    "approval_note.md",
+    "ausencias.csv",
+    "data_quality_issues.csv",
+    "duplicate_groups.csv",
+    "equipos.csv",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/examples.jsonl",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/interruption.json",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/prompt.md",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/results.csv",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/schema.json",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/examples.jsonl",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/interruption.json",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/prompt.md",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/results.csv",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/schema.json",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/examples.jsonl",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/interruption.json",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/prompt.md",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/results.csv",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/runtime.json",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/schema.json",
+    "evaluation_status.md",
+    "historical_ownership.csv",
+    "normalization_report.json",
+    "normalization_summary.md",
+    "note_context_evaluation.jsonl",
+    "note_evaluation.jsonl",
+    "note_examples.csv",
+    "note_examples.jsonl",
+    "note_golden_review_v1.jsonl",
+    "note_holdout.jsonl",
+    "note_security_evaluation.jsonl",
+    "note_training.jsonl",
+    "notebook_validation.json",
+    "prompt_review_status.json",
+    "registros.csv",
+    "seller_workload.csv",
+    "usuarios.csv"
+  ],
+  "input_checksums": {
+    "usuarios.csv": "1eca791a87dc6895d5d217ee673744677e43b5539fb3531ce93a0f6417070625",
+    "equipos.csv": "e957756634dd848b98cca24bf4bfd5fccd972a60d1855b7e47f84767154f4c4a",
+    "registros.csv": "94e67d6cf816a3940f3ca1ecf3e730d59e52285a8826819ecf994ea6c83e8204",
+    "ausencias.csv": "7040d3359f7f8aa093606cbf08dc4792ad3032d1c6ba7c13aab571d016e66f97",
+    "actividad.csv": "e9ddf75365869b5079a2efb134219262b445eb51a89686143536af129939fb7f",
+    "historical_ownership.csv": "dd86245247860497eba939bc850242096b45d5717d40b2e46749789b614bd243",
+    "seller_workload.csv": "fae0a290080608d82b756deca401f3c35577edadaf95d117e27a88d20c7e9cab",
+    "data_quality_issues.csv": "e83ef1061877471e0c567de7477fa0b57e1747b6bae0b927424ff7c0202f1d59",
+    "duplicate_groups.csv": "c19c1ab14d13826759ae532fa594f825688f91463fe55c6c9937f0e87bf2ec6c",
+    "note_examples.csv": "91bd2c8ec4e92d92ad1590b7764c6fbd8dcadc2986b6434d738ad6d37857f73c",
+    "note_examples.jsonl": "a522abef31868280e6465e224f9e07fb600cc2c9d869310ce630449021ed5937",
+    "normalization_report.json": "93d474ada2b17ede96e5b4b83afd752917f8330659f503eea49e069fbd8edfda",
+    "note_training.jsonl": "94fedd6db489e9b41dec01685c71fda771c9c67f5fe2cda56a42dd2f0d2c6850",
+    "note_evaluation.jsonl": "7ca1eb2458782e4e14961e3c9a5a9f3d0342ce13f888ecf113f63509470343f5",
+    "note_holdout.jsonl": "957c86c7488730bbc6f45a03a417f3e28aea10124061daa691a15f7048debbf9",
+    "note_security_evaluation.jsonl": "8db281f15447f03b9d6288d4408e033bc6a509899951fc518257b597778e625b",
+    "note_context_evaluation.jsonl": "1d39e1aa2ac1b51f0052aca8b571832fe82fb131fee26a38f933527c0a346600",
+    "note_golden_review_v1.jsonl": "017fcc8f5d22d66f13fc6a7753fef198cc222b02d4919493e48288a68efb484e",
+    "prompt_review_status.json": "48e735b4dac3e9bdcf64a8eaea6505ac43884a9b7bf1bba42fe9326a1ff2c418",
+    "normalization_summary.md": "338b13728c2e15795da016c2150fd884976ab531f17efc9aed127cd6192399ff",
+    "approval_note.md": "95f4d2daa217d2cd90f3b05d2dc310a500bb73ac1dbe3b46856a1619644fb352",
+    "evaluation_status.md": "0438f59c59624d4586253dc58c04fc64afe3da776e4e77f66fffca0d493eca19",
+    "notebook_validation.json": "9ccc74dcdf126debbd163acbf114e33cd21590d5468e35aefbf0f0054724b414",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/examples.jsonl": "7ca1eb2458782e4e14961e3c9a5a9f3d0342ce13f888ecf113f63509470343f5",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/interruption.json": "24e3075210ac1ae9df8796aa64c009daee3eeee62698afad3a3aa3f00c56bd0f",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/prompt.md": "b25d3787bba3fad9972f43ce64814b42d688ab6c62671ce258209c10af7f25f8",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/results.csv": "760ad67c34bbccfccee1b099de83869c778963146013b0541d55d9f5bade8731",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/schema.json": "8ad7fb446be2ffbeafacd2d6daaaad52c1afdca01f52ab853b99672e1ed1d824",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/examples.jsonl": "7ca1eb2458782e4e14961e3c9a5a9f3d0342ce13f888ecf113f63509470343f5",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/interruption.json": "f891822dcddbde3cfab7db4d044be4a93314d0e4d06663685c958fbdc5aed2e3",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/prompt.md": "b25d3787bba3fad9972f43ce64814b42d688ab6c62671ce258209c10af7f25f8",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/results.csv": "4451b1dd695668197eda46d115fbff2aa3813e74f61f35694f94d0b53762baa7",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/schema.json": "8ad7fb446be2ffbeafacd2d6daaaad52c1afdca01f52ab853b99672e1ed1d824",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/examples.jsonl": "7ca1eb2458782e4e14961e3c9a5a9f3d0342ce13f888ecf113f63509470343f5",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/interruption.json": "c90a44c8fb927a3ab2882f5bba3cde0f52e68f08b6fbcbe6dff3ef85fe80a5f8",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/prompt.md": "b25d3787bba3fad9972f43ce64814b42d688ab6c62671ce258209c10af7f25f8",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/results.csv": "785179118058772bb0b06928b040e8ecc0c99e72f64cd330d0175bff6ebee202",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/runtime.json": "23e8a8174eb5acc2f27f7ed2017fde3a4359a63e499fd810f608dbe73a4eb658",
+    "evaluation_runs/note_extraction_v1-note_evaluation-20260918T065122454139Z/schema.json": "8ad7fb446be2ffbeafacd2d6daaaad52c1afdca01f52ab853b99672e1ed1d824"
+  },
+  "rows_loaded_by_table": {
+    "normalization_runs": 1,
+    "import_artifacts": 39,
+    "teams": 5,
+    "users": 18,
+    "records": 167,
+    "absences": 8,
+    "activities": 264,
+    "historical_ownership": 167,
+    "seller_workload_snapshots": 17,
+    "note_templates": 15,
+    "record_signals": 167,
+    "data_quality_issues": 79,
+    "duplicate_groups": 3,
+    "prompt_versions": 1,
+    "llm_extractions": 9,
+    "assignment_previews": 0,
+    "assignment_preview_items": 0,
+    "assignments": 0,
+    "assignment_events": 0,
+    "llm_explanations": 0
+  },
+  "rows_attempted_by_table": {
+    "normalization_runs": 1,
+    "import_artifacts": 39,
+    "teams": 5,
+    "users": 18,
+    "records": 167,
+    "absences": 8,
+    "activities": 264,
+    "historical_ownership": 167,
+    "seller_workload_snapshots": 17,
+    "note_templates": 15,
+    "record_signals": 167,
+    "data_quality_issues": 79,
+    "duplicate_groups": 3,
+    "prompt_versions": 1,
+    "llm_extractions": 9,
+    "assignment_previews": 0,
+    "assignment_preview_items": 0,
+    "assignments": 0,
+    "assignment_events": 0,
+    "llm_explanations": 0
+  },
+  "rows_rejected_by_table": {
+    "normalization_runs": 0,
+    "import_artifacts": 0,
+    "teams": 0,
+    "users": 0,
+    "records": 0,
+    "absences": 0,
+    "activities": 0,
+    "historical_ownership": 0,
+    "seller_workload_snapshots": 0,
+    "note_templates": 0,
+    "record_signals": 0,
+    "data_quality_issues": 0,
+    "duplicate_groups": 0,
+    "prompt_versions": 0,
+    "llm_extractions": 0,
+    "assignment_previews": 0,
+    "assignment_preview_items": 0,
+    "assignments": 0,
+    "assignment_events": 0,
+    "llm_explanations": 0
+  },
+  "warnings": [
+    "User 17: source team 99 retained; operational team_id is NULL.",
+    "Model identity unavailable for evaluation_runs/note_extraction_v1-note_evaluation-20260918T063933072201Z/results.csv; stored as NULL.",
+    "Model identity unavailable for evaluation_runs/note_extraction_v1-note_evaluation-20260918T064311073971Z/results.csv; stored as NULL.",
+    "LLM evaluation outputs are historical evidence, not accepted labels or new assignments."
+  ],
+  "blocking_errors": [],
+  "foreign_key_results": {
+    "users.team_id->teams.id": {
+      "unresolved": 0
+    },
+    "teams.leader_id->users.id": {
+      "unresolved": 0
+    },
+    "absences.user_id->users.id": {
+      "unresolved": 0
+    },
+    "activities.user_id->users.id": {
+      "unresolved": 0
+    },
+    "activities.record_id->records.id": {
+      "unresolved": 0
+    },
+    "historical_ownership.record_id->records.id": {
+      "unresolved": 0
+    },
+    "historical_ownership.user_id->users.id": {
+      "unresolved": 0
+    },
+    "record_signals.record_id->records.id": {
+      "unresolved": 0
+    }
+  },
+  "business_invariant_results": {
+    "count_teams": {
+      "observed": 5,
+      "expected": 5,
+      "passed": true
+    },
+    "count_users": {
+      "observed": 18,
+      "expected": 18,
+      "passed": true
+    },
+    "count_records": {
+      "observed": 167,
+      "expected": 167,
+      "passed": true
+    },
+    "count_absences": {
+      "observed": 8,
+      "expected": 8,
+      "passed": true
+    },
+    "count_activities": {
+      "observed": 264,
+      "expected": 264,
+      "passed": true
+    },
+    "all_rows_teams": {
+      "observed": 5,
+      "expected": 5,
+      "passed": true
+    },
+    "all_rows_users": {
+      "observed": 18,
+      "expected": 18,
+      "passed": true
+    },
+    "all_rows_records": {
+      "observed": 167,
+      "expected": 167,
+      "passed": true
+    },
+    "all_rows_absences": {
+      "observed": 8,
+      "expected": 8,
+      "passed": true
+    },
+    "all_rows_activities": {
+      "observed": 264,
+      "expected": 264,
+      "passed": true
+    },
+    "all_rows_historical_ownership": {
+      "observed": 167,
+      "expected": 167,
+      "passed": true
+    },
+    "all_rows_seller_workload_snapshots": {
+      "observed": 17,
+      "expected": 17,
+      "passed": true
+    },
+    "all_rows_record_signals": {
+      "observed": 167,
+      "expected": 167,
+      "passed": true
+    },
+    "all_rows_data_quality_issues": {
+      "observed": 79,
+      "expected": 79,
+      "passed": true
+    },
+    "all_rows_duplicate_groups": {
+      "observed": 3,
+      "expected": 3,
+      "passed": true
+    },
+    "status_nuevo": {
+      "observed": 71,
+      "expected": 71,
+      "passed": true
+    },
+    "status_en_gestion": {
+      "observed": 46,
+      "expected": 46,
+      "passed": true
+    },
+    "status_asignado": {
+      "observed": 30,
+      "expected": 30,
+      "passed": true
+    },
+    "status_descartado": {
+      "observed": 20,
+      "expected": 20,
+      "passed": true
+    },
+    "inferred_owners": {
+      "observed": 96,
+      "expected": 96,
+      "passed": true
+    },
+    "records_without_owner": {
+      "observed": 71,
+      "expected": 71,
+      "passed": true
+    },
+    "duplicate_nit_groups": {
+      "observed": 3,
+      "expected": 3,
+      "passed": true
+    },
+    "actual_duplicate_nit_groups": {
+      "observed": 3,
+      "expected": 3,
+      "passed": true
+    },
+    "unique_note_templates": {
+      "observed": 15,
+      "expected": 15,
+      "passed": true
+    },
+    "note_frequency": {
+      "observed": 140,
+      "expected": 140,
+      "passed": true
+    },
+    "missing_notes": {
+      "observed": 27,
+      "expected": 27,
+      "passed": true
+    },
+    "signals_without_notes": {
+      "observed": 27,
+      "expected": 27,
+      "passed": true
+    },
+    "null_record_zones": {
+      "observed": 8,
+      "expected": 8,
+      "passed": true
+    },
+    "null_record_sectors": {
+      "observed": 6,
+      "expected": 6,
+      "passed": true
+    },
+    "null_employee_counts": {
+      "observed": 10,
+      "expected": 10,
+      "passed": true
+    },
+    "null_estimated_revenue": {
+      "observed": 5,
+      "expected": 5,
+      "passed": true
+    },
+    "open_ended_absence": {
+      "observed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    "invalid_team_preserved": {
+      "observed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    "no_false_team_99": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "team_99_issue_preserved": {
+      "observed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    "audit_original_nit": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "audit_normalized_nit": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "workload_matches_records": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "empty_assignment_previews": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "empty_assignment_preview_items": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "empty_assignments": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "empty_assignment_events": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "empty_llm_explanations": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    "all_foreign_keys_validated": {
+      "observed": 0,
+      "expected": 0,
+      "passed": true
+    }
+  },
+  "transaction_status": "committed"
+}

@@ -1,0 +1,6 @@
+id,nombre,lider_id,zona,_source_row,id_original,id_normalizado,id_normalization_rule,id_was_inferred,nombre_original,nombre_normalizado,nombre_normalization_rule,nombre_was_inferred,lider_id_original,lider_id_normalizado,lider_id_normalization_rule,lider_id_was_inferred,zona_original,zona_normalizada,zona_normalization_rule,zona_was_inferred
+1,Corporativo Centro,2,Centro,2,1,1,trim_unicode_nfc,False,Corporativo Centro,Corporativo Centro,trim_unicode_nfc,False,2,2,trim_unicode_nfc,False,Centro,Centro,explicit_zone_alias,False
+2,PYME Centro,5,Centro,3,2,2,trim_unicode_nfc,False,PYME Centro,PYME Centro,trim_unicode_nfc,False,5,5,trim_unicode_nfc,False,Centro,Centro,explicit_zone_alias,False
+3,Antioquia,9,Antioquia,4,3,3,trim_unicode_nfc,False,Antioquia,Antioquia,trim_unicode_nfc,False,9,9,trim_unicode_nfc,False,Antioquia,Antioquia,explicit_zone_alias,False
+4,Occidente,12,Occidente,5,4,4,trim_unicode_nfc,False,Occidente,Occidente,trim_unicode_nfc,False,12,12,trim_unicode_nfc,False,Occidente,Occidente,explicit_zone_alias,False
+5,Costa,,Costa,6,5,5,trim_unicode_nfc,False,Costa,Costa,trim_unicode_nfc,False,,,missing,False,Costa,Costa,explicit_zone_alias,False

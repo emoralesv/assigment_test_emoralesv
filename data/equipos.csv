@@ -1,0 +1,6 @@
+id,nombre,lider_id,zona
+1,Corporativo Centro,2,Centro
+2,PYME Centro,5,Centro
+3,Antioquia,9,Antioquia
+4,Occidente,12,Occidente
+5,Costa,,Costa

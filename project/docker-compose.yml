@@ -1,0 +1,115 @@
+services:
+  postgres:
+    image: ${POSTGRES_IMAGE:-postgres:17}
+    networks: [database_private]
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME:?Configure DATABASE_NAME in the environment file}
+      POSTGRES_USER: ${DATABASE_USER:?Configure DATABASE_USER in the environment file}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?Configure DATABASE_PASSWORD in the environment file}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    restart: unless-stopped
+
+  database_api:
+    build:
+      context: ..
+      dockerfile: project/database/Dockerfile
+    user: "${LOCAL_UID:-1001}:${LOCAL_GID:-1001}"
+    ports: ["127.0.0.1:${DATABASE_API_PORT:-8001}:8000"]
+    networks: [default, database_private]
+    environment:
+      APP_ENV: ${APP_ENV:-local}
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_API_TOKEN: ${DATABASE_API_TOKEN:?Configure DATABASE_API_TOKEN}
+      DATABASE_API_ADMIN_TOKEN: ${DATABASE_API_ADMIN_TOKEN:?Configure DATABASE_API_ADMIN_TOKEN}
+    volumes: ["../normalized:/app/normalized"]
+    depends_on:
+      postgres: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ..
+      dockerfile: project/api/Dockerfile
+    ports: ["127.0.0.1:${API_PORT:-8000}:8000"]
+    networks: [default]
+    environment:
+      DATABASE_API_URL: http://database_api:8000
+      DATABASE_API_TOKEN: ${DATABASE_API_TOKEN}
+      DATABASE_API_ADMIN_TOKEN: ${DATABASE_API_ADMIN_TOKEN}
+      OLLAMA_BASE_URL: http://llm_service:11434
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2:1b}
+      OLLAMA_DEFAULT_MODEL: ${OLLAMA_DEFAULT_MODEL:-llama3.2:1b}
+      OLLAMA_TIMEOUT_SECONDS: ${OLLAMA_TIMEOUT_SECONDS:-30}
+      OLLAMA_EXPLANATION_TIMEOUT_SECONDS: ${OLLAMA_EXPLANATION_TIMEOUT_SECONDS:-180}
+    depends_on:
+      database_api: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: project/frontend/Dockerfile
+    ports: ["127.0.0.1:${FRONTEND_PORT:-8501}:8501"]
+    networks: [default]
+    environment:
+      API_BASE_URL: http://api:8000
+    depends_on:
+      api: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+
+  llm_service:
+    image: ${OLLAMA_IMAGE:-ollama/ollama:latest}
+    gpus: all
+
+    ports:
+      - "127.0.0.1:${OLLAMA_PORT:-11434}:11434"
+
+    volumes:
+      - ollama_data:/root/.ollama
+
+    environment:
+      OLLAMA_HOST: 0.0.0.0:11434
+      OLLAMA_KEEP_ALIVE: 10m
+
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
+  postgres_data:
+
+networks:
+  database_private:
+    internal: true

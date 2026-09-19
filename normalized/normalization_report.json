@@ -1,0 +1,116 @@
+{
+  "effective_date": "2026-09-18",
+  "source_hashes": {
+    "usuarios": "04c748eb60a51de46f9367af8d7753e6688963688825936fb6c615253fb1eaff",
+    "equipos": "f44d43b2c0d78ba1e9f9bd1028f9c8c33a4d70197e41bc16b0e02735c9e8debb",
+    "registros": "83cbbd74000eb5bddfef99e4c9c8641cc097a614fe0cec3ddf0af4870a05b4c0",
+    "ausencias": "7eb51a3af737b71d171407d97210bba7d176f293b28f0db8462baffdd8b25987",
+    "actividad": "796f9434c091c415ea7b1749b14743dcdb5cbb8de8ad37ec9cb9a9b07602f6a4"
+  },
+  "source_unchanged": true,
+  "row_counts": {
+    "usuarios": 18,
+    "equipos": 5,
+    "registros": 167,
+    "ausencias": 8,
+    "actividad": 264
+  },
+  "checks": {
+    "nuevo": {
+      "expected": 71,
+      "observed": 71,
+      "matches": true
+    },
+    "en_gestion": {
+      "expected": 46,
+      "observed": 46,
+      "matches": true
+    },
+    "asignado": {
+      "expected": 30,
+      "observed": 30,
+      "matches": true
+    },
+    "descartado": {
+      "expected": 20,
+      "observed": 20,
+      "matches": true
+    },
+    "duplicate_nit_groups": {
+      "expected": 3,
+      "observed": 3,
+      "matches": true
+    },
+    "future_records": {
+      "expected": 2,
+      "observed": 2,
+      "matches": true
+    },
+    "users_team_99": {
+      "expected": 1,
+      "observed": 1,
+      "matches": true
+    },
+    "missing_notes": {
+      "expected": 27,
+      "observed": 27,
+      "matches": true
+    },
+    "missing_zones": {
+      "expected": 8,
+      "observed": 8,
+      "matches": true
+    },
+    "missing_sectors": {
+      "expected": 6,
+      "observed": 6,
+      "matches": true
+    },
+    "missing_employees": {
+      "expected": 10,
+      "observed": 10,
+      "matches": true
+    },
+    "missing_revenue": {
+      "expected": 5,
+      "observed": 5,
+      "matches": true
+    },
+    "open_ended_absences": {
+      "expected": 1,
+      "observed": 1,
+      "matches": true
+    },
+    "inferred_owners": {
+      "expected": 96,
+      "observed": 96,
+      "matches": true
+    },
+    "no_owners": {
+      "expected": 71,
+      "observed": 71,
+      "matches": true
+    },
+    "unique_notes": {
+      "expected": 15,
+      "observed": 15,
+      "matches": true
+    }
+  },
+  "issue_counts": {
+    "missing_value": 61,
+    "future_date": 7,
+    "duplicate_nit": 6,
+    "orphan_reference": 1,
+    "missing_foreign_key": 1,
+    "possible_duplicate_note": 3
+  },
+  "unattributed_active_records": [],
+  "city_to_zone_rules": {},
+  "limitations": [
+    "Ownership and workload are inferred from activity, not verified current assignments.",
+    "Leaders and sellers are reported separately by source role; no seller assignment is performed.",
+    "No activity, ambiguous ownership and invalid owners are not attributed; see unattributed_active_records.",
+    "Missing capacity has no implicit default; zero capacity prohibits new records."
+  ]
+}

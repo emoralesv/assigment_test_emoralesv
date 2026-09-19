@@ -1,0 +1,23 @@
+{
+  "status": "approved",
+  "prompt": "project/llm_service/promps/note_extraction_v1.md",
+  "schema": "project/llm_service/schemas/note_extraction_v1.schema.json",
+  "original_records": 167,
+  "non_null_notes": 140,
+  "null_notes": 27,
+  "unique_notes": 15,
+  "evaluation_run": true,
+  "source_sha256": {
+    "data/actividad.csv": "796f9434c091c415ea7b1749b14743dcdb5cbb8de8ad37ec9cb9a9b07602f6a4",
+    "data/ausencias.csv": "7eb51a3af737b71d171407d97210bba7d176f293b28f0db8462baffdd8b25987",
+    "data/equipos.csv": "f44d43b2c0d78ba1e9f9bd1028f9c8c33a4d70197e41bc16b0e02735c9e8debb",
+    "data/registros.csv": "83cbbd74000eb5bddfef99e4c9c8641cc097a614fe0cec3ddf0af4870a05b4c0",
+    "data/usuarios.csv": "04c748eb60a51de46f9367af8d7753e6688963688825936fb6c615253fb1eaff"
+  },
+  "approved_on": "2026-09-18",
+  "approval_note": "El usuario validó el prompt y autorizó continuar: «alidado, añade nota y continua».",
+  "approved_prompt_sha256": "b25d3787bba3fad9972f43ce64814b42d688ab6c62671ce258209c10af7f25f8",
+  "approved_schema_sha256": "8ad7fb446be2ffbeafacd2d6daaaad52c1afdca01f52ab853b99672e1ed1d824",
+  "evaluation_status": "partial_interrupted_for_notebook_workflow",
+  "model_accepted": false
+}

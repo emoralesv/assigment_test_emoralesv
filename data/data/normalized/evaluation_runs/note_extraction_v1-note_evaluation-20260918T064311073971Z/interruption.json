@@ -1,0 +1,4 @@
+{
+  "status": "interrupted",
+  "reason": "Switch to llama3.2:1b for CPU evaluation; 3B partial results retained, not accepted."
+}

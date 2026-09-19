@@ -1,0 +1,4 @@
+# Optional local fallback when Docker cannot expose an NVIDIA GPU.
+services:
+  llm_service:
+    gpus: !reset []

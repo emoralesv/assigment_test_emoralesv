@@ -1,0 +1,168 @@
+id,razon_social,nit,sector,empleados,ingresos_estimados,ciudad,zona,fuente,notas,estado,fecha_creacion
+1,Servicios Girardot S.A.,986386194-1,Metalmecánica,8,1866000000,Montería,Costa,campaña,"Ya fue cliente en 2023, se retiró por precio.",nuevo,2026-09-14
+2,COMERCIALIZADORA ANDINA SAS,955278388-6,Salud,40,2156000000,Palmira,Occidente ,web,"Ya fue cliente en 2023, se retiró por precio.",nuevo,2026-09-04
+3,Industrias Andina S.A.S.,971051611-7,Alimentos y bebidas,260,7418000000,Manizales,,web,"Dejó los datos en el stand de la feria, mostró poco interés.",nuevo,2026-09-06
+4,Constructora Caribe Azul Ltda.,906660734-7,Retail,40,1967000000,Manizales,Occidente,web,Llamar únicamente después de las 2 pm.,nuevo,2026-09-07
+5,Distribuidora La Esperanza Ltda.,902379388-8,Hotelería,260,10591000000,Envigado,Antioquia,campaña,"Registro cargado desde base comprada, sin validar.",Nuevo,2026-09-14
+6,Suministros Vallecaucana Ltda.,947471833-6,Metalmecánica,,335000000,Montería,COSTA,campaña,"Empresa familiar, decide el dueño directamente.",nuevo,2026-09-16
+7,Grupo El Poblado S.A.,955391250-2,Manufactura,18,2186000000,Cali,Occidente,evento,"Registro cargado desde base comprada, sin validar.",nuevo,2026-09-09
+8,Manufacturas El Dorado S.A.,926716388-5,,1400,52722000000,Medellín,Antioquia,referido,Pidió que lo contacte alguien que conozca el sector.,nuevo,2026-09-05
+9,Soluciones Yumbo S.A.S.,999820933-4,Química,120,3432000000,Envigado,ANT,web,"Correo rebotado, el celular sí contesta.",nuevo,2026-09-08
+10,Textiles La Esperanza S.A.,900326803-8,Alimentos y bebidas,650,,Envigado,antioquia,evento,"Empresa familiar, decide el dueño directamente.",nuevo,2026-09-05
+11,Inversiones Santa Bárbara S.A.,998282196-0,Retail,25,1273000000,Chía,Centro,campaña,,nuevo,2026-09-09
+12,Servicios Orinoquía S.A.S.,989677417-0,Textil,18,1965000000,Armenia,,campaña,"Está comparando tres propuestas, decide este mes.",nuevo,2026-09-05
+13,Agropecuaria Vallecaucana S.A.S.,984201894-7,Agroindustria,12,696000000,Bogotá,Centro,referido,Tiene contrato vigente con otro proveedor hasta diciembre.,nuevo,2026-09-07
+14,Textiles La Candelaria S. en C.,927559793-0,Servicios profesionales,80,6122000000,Medellín,ANT,campaña,,nuevo,2026-09-07
+15,Soluciones Monserrate S.A.S.,916531782-4,Construcción,,1973000000,Cali,Occidente,lista,"Registro cargado desde base comprada, sin validar.",nuevo,2026-09-09
+16,Comercializadora Las Palmas S.A.,951251562-0,Retail,260,17689000000,Cali,Occidente ,web,Solicitó información de eficiencia energética para planta nueva.,nuevo,2026-09-08
+17,Suministros Girardot S.A.,991596286-5,Inmobiliario,260,11298000000,Santa Marta,costa,evento,"Está comparando tres propuestas, decide este mes.",nuevo,2026-09-19
+18,Constructora Tequendama S.A.,914599415-4,Agroindustria,260,11142000000,Bogotá,Centro,lista,,nuevo,2026-09-14
+19,Inversiones Bolívar Ltda.,913615084-7,Minería,80,3828000000,Bucaramanga,centro,referido,"Quiere propuesta para siete sedes, no para una.",nuevo,2026-09-16
+20,Manufacturas Zipaquirá S. en C.,912479572-8,Minería,120,4224000000,Bogotá,centro,evento,"Quiere propuesta para siete sedes, no para una.",Nuevo,2026-09-15
+21,Alimentos Monserrate S.A.S.,985662566-9,Química,80,6487000000,Bogotá,centro,referido,Lo refirió el gerente de una cuenta actual.,nuevo,2026-09-16
+22,Agropecuaria Antares S.A.S.,906430098-4,Manufactura,8,1528000000,Pereira,Occidente ,campaña,"Dejó los datos en el stand de la feria, mostró poco interés.",nuevo,2026-09-13
+23,Grupo Monserrate S.A.S.,917968346-8,,180,4031000000,Chía,Centro,web,,nuevo,2026-09-08
+24,Logística Las Palmas S.A.S.,941532714-3,Transporte y logística,900,47307000000,Armenia,Occidente,campaña,"Quiere propuesta para siete sedes, no para una.",nuevo,2026-09-16
+25,Agropecuaria La Candelaria S.A.S.,983246305-8,Química,900,,Montería,Costa,referido,Llamar únicamente después de las 2 pm.,nuevo,2026-09-04
+26,Transportes Chicamocha S.A.,967891135-0,Servicios profesionales,12,693000000,Montería,Costa,referido,"Ya fue cliente en 2023, se retiró por precio.",nuevo,2026-09-05
+27,Industrias Orinoquía S.A.S.,941155275-9,Hotelería,900,52421000000,Tunja,,web,Tiene contrato vigente con otro proveedor hasta diciembre.,nuevo,2026-09-09
+28,Soluciones Las Palmas Ltda.,932476165-5,Textil,1400,71055000000,Cartagena,COSTA,web,Lo refirió el gerente de una cuenta actual.,nuevo,2026-09-05
+29,Servicios Monserrate Ltda.,932110868-6,Construcción,650,49488000000,Montería,costa,web,"Empresa familiar, decide el dueño directamente.",nuevo,2026-09-14
+30,Logística El Poblado S.A.S.,925471761-1,Hotelería,2100,119599000000,Pereira,Occidente,referido,"Ya fue cliente en 2023, se retiró por precio.",nuevo,2026-09-15
+31,INVERSIONES EL POBLADO LTDA,950445842-8,Alimentos y bebidas,55,8320000000,Manizales,Occidente ,web,"Registro cargado desde base comprada, sin validar.",nuevo,2026-09-12
+32,Suministros Cafetera Ltda.,961473710-3,Construcción,,17110000000,Cali,occidente,referido,,nuevo,2026-09-08
+33,Inversiones Sierra Nevada Ltda.,943097053-0,Retail,120,8984000000,Medellín,Antioquia,web,Solicitó información de eficiencia energética para planta nueva.,nuevo,2026-09-11
+34,Manufacturas Guadalupe S. en C.,994090847-6,Servicios profesionales,80,15184000000,Medellín,antioquia,evento,Llamar únicamente después de las 2 pm.,Nuevo,2026-09-13
+35,Soluciones Santa Bárbara S. en C.,999706984-2,Servicios profesionales,12,1158000000,Palmira,Occidente,evento,Ya lo contactamos en marzo y pidió que no insistiéramos.,nuevo,2026-09-09
+36,Transportes Zipaquirá S.A.,944551481-7,Inmobiliario,900,33600000000,Palmira,occidente,evento,,nuevo,2026-09-06
+37,Textiles del Caribe S.A.S.,960154635-8,Minería,18,2005000000,Sincelejo,COSTA,referido,Llamar únicamente después de las 2 pm.,nuevo,2026-09-16
+38,Industrias Tequendama S.A.S.,954434522-4,Minería,55,4619000000,Medellín,ANT,lista,,nuevo,2026-09-12
+39,Suministros Los Nevados Ltda.,975142262-2,Química,12,1875000000,Chía,Centro,lista,"Correo rebotado, el celular sí contesta.",nuevo,2026-09-05
+40,Soluciones Magdalena Ltda.,998188707-4,Agroindustria,55,5268000000,Soacha,Bogotá,campaña,Tiene contrato vigente con otro proveedor hasta diciembre.,nuevo,2026-09-15
+41,Manufacturas Andina S. en C.,993480440-3,Textil,260,6840000000,Montería,,lista,,nuevo,2026-09-05
+42,Soluciones Chicamocha S. en C.,960758557-1,Tecnología,55,2726000000,Bogotá,Bogotá,campaña,"Está comparando tres propuestas, decide este mes.",nuevo,2026-09-05
+43,Comercializadora La Esperanza S.A.S.,910726095-8,Hotelería,18,2220000000,Envigado,ANT,lista,"Correo rebotado, el celular sí contesta.",nuevo,2026-09-14
+44,Suministros Los Nevados S.A.S.,973492989-5,Textil,40,2364000000,Soacha,Centro,referido,"Empresa familiar, decide el dueño directamente.",nuevo,2026-09-16
+45,Manufacturas Cafetera S. en C.,929489132-8,Textil,80,7847000000,Itagüí,Antioquia,referido,"Está comparando tres propuestas, decide este mes.",nuevo,2026-09-07
+46,Textiles Orinoquía S.A.,997104794-5,Química,420,69979000000,Armenia,occidente,referido,Llamar únicamente después de las 2 pm.,nuevo,2026-09-04
+47,Soluciones Orinoquía S.A.S.,917891485-2,Textil,,2311000000,Cali,Occidente,lista,Insistió en hablar con alguien senior.,nuevo,2026-09-06
+48,Comercializadora Magdalena S.A.S.,940451158-5,Metalmecánica,1400,32081000000,Medellín,ANT,evento,"Quiere propuesta para siete sedes, no para una.",nuevo,2026-09-06
+49,Servicios Zipaquirá S.A.,962551503-3,Educación,420,110602000000,Montería,costa,evento,"Quiere propuesta para siete sedes, no para una.",nuevo,2026-09-04
+50,Alimentos Girardot Ltda.,911791476-9,,650,19882000000,Barranquilla,Costa,campaña,"Está comparando tres propuestas, decide este mes.",nuevo,2026-09-12
+51,Manufacturas Bolívar S.A.,937718386-9,Textil,1400,118662000000,Medellín,Antioquia,lista,,nuevo,2026-09-08
+52,Logística Sierra Nevada S.A.,936780718-6,Alimentos y bebidas,8,2132000000,Barranquilla,Costa,referido,"Correo rebotado, el celular sí contesta.",nuevo,2026-09-16
+53,Grupo Guadalupe S.A.S.,918106921-9,Construcción,12,1058000000,Chía,Bogotá,lista,"Dejó los datos en el stand de la feria, mostró poco interés.",nuevo,2026-09-27
+54,Logística Magdalena S.A.S.,900744936-6,Retail,25,1677000000,Cali,occidente,campaña,Lo refirió el gerente de una cuenta actual.,nuevo,2026-09-14
+55,Manufacturas Pacífico Sur S.A.,942230918-5,Hotelería,25,2225000000,Cúcuta,Bogotá,lista,,nuevo,2026-09-09
+56,Manufacturas Tequendama S. en C.,958904706-7,Minería,180,7464000000,Armenia,Occidente,lista,"Registro cargado desde base comprada, sin validar.",nuevo,2026-09-09
+57,Manufacturas Caribe Azul S.A.S.,988578555-1,Química,18,410000000,Palmira,Occidente,web,"Está comparando tres propuestas, decide este mes.",nuevo,2026-09-05
+58,Distribuidora Magdalena S. en C.,924589561-0,Metalmecánica,40,1028000000,Barranquilla,Costa,referido,"Correo rebotado, el celular sí contesta.",Nuevo,2026-09-13
+59,Servicios San Rafael S.A.,966071620-3,Tecnología,,822000000,Tunja,CENTRO,lista,"Está comparando tres propuestas, decide este mes.",nuevo,2026-09-05
+60,Servicios Chicamocha S. en C.,950221501-0,Retail,80,16736000000,Sincelejo,COSTA,evento,Tiene contrato vigente con otro proveedor hasta diciembre.,nuevo,2026-09-07
+61,Suministros Los Nevados S. en C.,992413219-3,Educación,120,11217000000,Cúcuta,Centro,referido,,nuevo,2026-09-04
+62,Textiles Pacífico Sur S. en C.,907894352-8,Manufactura,260,11667000000,Tunja,,evento,"Dejó los datos en el stand de la feria, mostró poco interés.",nuevo,2026-09-05
+63,Constructora Cafetera S.A.S.,929911100-3,Manufactura,8,1117000000,Armenia,Occidente,referido,"Registro cargado desde base comprada, sin validar.",nuevo,2026-09-08
+64,Alimentos Monserrate S.A.S.,965112478-7,Retail,420,36756000000,Bogotá,CENTRO,referido,"Quiere propuesta para siete sedes, no para una.",nuevo,2026-09-14
+65,Distribuidora Los Nevados S.A.,921189136-5,Salud,40,1233000000,Palmira,occidente,lista,"Está comparando tres propuestas, decide este mes.",nuevo,2026-09-15
+66,Agropecuaria Caribe Azul Ltda.,900087755-4,Transporte y logística,900,108226000000,Medellín,ANT,evento,"Empresa familiar, decide el dueño directamente.",nuevo,2026-09-08
+67,Manufacturas Las Palmas S. en C.,986349204-7,Retail,1400,,Cali,Occidente,lista,"Dejó los datos en el stand de la feria, mostró poco interés.",nuevo,2026-09-05
+68,Distribuidora Girardot Ltda.,912179203-3,Alimentos y bebidas,650,64125000000,Bogotá,CENTRO,evento,"Registro cargado desde base comprada, sin validar.",nuevo,2026-09-04
+69,Industrias Antares S.A.S.,928837419-1,Textil,900,25713000000,Barranquilla,COSTA,evento,"Registro cargado desde base comprada, sin validar.",en_gestion,2026-07-18
+70,Transportes Santa Bárbara S.A.S.,986122439-4,Metalmecánica,8,2184000000,Itagüí,ANT,evento,"Correo rebotado, el celular sí contesta.",asignado,2026-07-01
+71,Logística San Rafael S.A.,950151949-8,Hotelería,180,17747000000,Sincelejo,Costa,web,Insistió en hablar con alguien senior.,en_gestion,2026-06-09
+72,Grupo El Poblado S. en C.,934012288-3,,180,5362000000,Chía,Centro,campaña,Pidió que lo contacte alguien que conozca el sector.,asignado,2026-05-14
+73,Industrias Sierra Nevada S. en C.,972136432-2,Alimentos y bebidas,80,4652000000,Sincelejo,costa,web,"Ya fue cliente en 2023, se retiró por precio.",en_gestion,2026-08-03
+74,TRANSPORTES CARIBE AZUL S.A,982752478-1,Alimentos y bebidas,18,1854000000,Bogotá,Bogotá,lista,Lo refirió el gerente de una cuenta actual.,descartado,2026-06-25
+75,Soluciones Yumbo S.A.S.,960815128-3,Construcción,40,1825000000,Soacha,Centro,campaña,Lo refirió el gerente de una cuenta actual.,asignado,2026-05-09
+76,Inversiones Chicamocha S.A.S.,910882252-2,Textil,40,2435000000,Villavicencio,Centro,evento,Solicitó información de eficiencia energética para planta nueva.,descartado,2026-06-19
+77,Industrias Ecoandes S.A.S.,914134241-4,Manufactura,900,28551000000,Bogotá,CENTRO,evento,,en_gestion,2026-04-29
+78,Constructora Sierra Nevada S. en C.,946773617-4,Servicios profesionales,,36201000000,Bogotá,CENTRO,campaña,Insistió en hablar con alguien senior.,descartado,2026-06-27
+79,Transportes Monserrate S.A.S.,972538334-0,Química,650,89131000000,Palmira,occidente,referido,,en_gestion,2026-07-17
+80,Alimentos Orinoquía S.A.S.,990359054-1,Educación,260,12204000000,Bogotá,Centro,campaña,"Registro cargado desde base comprada, sin validar.",asignado,2026-05-24
+81,Manufacturas Ecoandes S.A.,982012766-4,Alimentos y bebidas,120,4939000000,Medellín,ANT,campaña,"Registro cargado desde base comprada, sin validar.",asignado,2026-04-21
+82,Alimentos Cafetera S.A.S.,965949635-4,Hotelería,18,1398000000,Bucaramanga,centro,web,"Ya fue cliente en 2023, se retiró por precio.",en_gestion,2026-07-22
+83,Suministros Zipaquirá S.A.S.,936450465-3,Manufactura,40,915000000,Rionegro,ANT,web,,en_gestion,2026-04-17
+84,Servicios Monserrate Ltda.,945193289-2,Alimentos y bebidas,120,2524000000,Santa Marta,,lista,Pidió que lo contacte alguien que conozca el sector.,asignado,2026-03-14
+85,Inversiones La Candelaria Ltda.,919263960-0,Alimentos y bebidas,420,43205000000,Chía,centro,referido,Insistió en hablar con alguien senior.,descartado,2026-05-18
+86,Inversiones La Candelaria S.A.S.,978600755-7,Educación,2100,119627000000,Manizales,occidente,campaña,"Correo rebotado, el celular sí contesta.",en_gestion,2026-03-26
+87,Industrias Vallecaucana Ltda.,969895770-3,Tecnología,2100,57883000000,Rionegro,Antioquia,evento,Solicitó información de eficiencia energética para planta nueva.,en_gestion,2026-09-04
+88,Manufacturas El Dorado Ltda.,993978250-2,Hotelería,40,707000000,Rionegro,antioquia,lista,,asignado,2026-03-04
+89,Manufacturas Sierra Nevada S.A.S.,900279262-9,Inmobiliario,8,,Medellín,antioquia,web,,en_gestion,2026-05-06
+90,Grupo Orinoquía S.A.,963999435-4,Hotelería,180,13205000000,Bucaramanga,Centro,lista,,en_gestion,2026-06-11
+91,Alimentos Zipaquirá Ltda.,966078490-1,Retail,180,7472000000,Soacha,Centro,web,,asignado,2026-04-20
+92,Inversiones Yumbo S.A.S.,917102092-9,Transporte y logística,650,30202000000,Villavicencio,Centro,lista,Solicitó información de eficiencia energética para planta nueva.,en_gestion,2026-07-21
+93,Textiles Orinoquía S.A.S.,900336827-8,Transporte y logística,,1969000000,Sincelejo,Costa,web,,asignado,2026-02-26
+94,Servicios San Rafael S.A.,941520042-4,Metalmecánica,1400,46324000000,Barranquilla,Costa,evento,"Registro cargado desde base comprada, sin validar.",descartado,2026-04-16
+95,Textiles El Dorado Ltda.,924283969-3,Minería,80,4934000000,Cali,occidente,lista,,descartado,2026-02-21
+96,Agropecuaria Puerto Colombia S.A.S.,949451898-8,Transporte y logística,900,62155000000,Soacha,Bogotá,referido,,asignado,2026-03-11
+97,Comercializadora Los Nevados S.A.S.,900056638-8,,900,45271000000,Itagüí,ANT,evento,"Está comparando tres propuestas, decide este mes.",en_gestion,2026-09-05
+98,Textiles Caribe Azul Ltda.,941745027-1,Educación,18,2044000000,Montería,Costa,referido,Lo refirió el gerente de una cuenta actual.,en_gestion,2026-07-08
+99,Suministros Magdalena Ltda.,929162683-9,Tecnología,2100,55820000000,Sincelejo,costa,lista,"Empresa familiar, decide el dueño directamente.",en_gestion,2026-05-28
+100,Logística Guadalupe S. en C.,916669777-8,Hotelería,420,46385000000,Cúcuta,Bogotá,referido,Ya lo contactamos en marzo y pidió que no insistiéramos.,en_gestion,2026-07-03
+101,Industrias Bolívar S. en C.,920906822-1,Minería,18,942000000,Rionegro,Antioquia,referido,,en_gestion,2026-07-25
+102,Textiles Antares Ltda.,959789675-3,Alimentos y bebidas,900,80629000000,Bogotá,Centro,web,,asignado,2026-02-22
+103,Agropecuaria Antares S. en C.,972053858-6,Metalmecánica,180,3347000000,Bogotá,Centro,referido,"Empresa familiar, decide el dueño directamente.",descartado,2026-09-15
+104,Servicios Girardot S. en C.,972742379-1,Química,420,68852000000,Soacha,CENTRO,referido,"Ya fue cliente en 2023, se retiró por precio.",en_gestion,2026-05-20
+105,Inversiones Bolívar S.A.S.,932572565-2,Química,1400,83103000000,Palmira,,campaña,Ya lo contactamos en marzo y pidió que no insistiéramos.,asignado,2026-05-14
+106,Grupo San Rafael S.A.S.,907367225-1,Manufactura,12,537000000,Cartagena,Costa,campaña,Pidió que lo contacte alguien que conozca el sector.,asignado,2026-04-15
+107,Comercializadora Los Nevados S. en C.,936415437-0,Manufactura,180,16719000000,Chía,CENTRO,evento,"Correo rebotado, el celular sí contesta.",en_gestion,2026-07-26
+108,Industrias Cafetera S.A.,952788450-5,Metalmecánica,420,29833000000,Rionegro,antioquia,lista,"Empresa familiar, decide el dueño directamente.",asignado,2026-07-20
+109,Comercializadora Pacífico Sur Ltda.,986846771-0,Educación,8,308000000,Cali,occidente,evento,Solicitó información de eficiencia energética para planta nueva.,descartado,2026-04-05
+110,Alimentos Los Nevados Ltda.,982194405-8,Educación,260,3487000000,Tunja,Centro,evento,,en_gestion,2026-05-27
+111,Agropecuaria El Poblado S.A.S.,927172033-0,Hotelería,,16334000000,Bogotá,Centro,referido,Pidió que lo contacte alguien que conozca el sector.,en_gestion,2026-05-12
+112,Textiles Magdalena S. en C.,901393687-7,Retail,650,60811000000,Tunja,Bogotá,campaña,Llamar únicamente después de las 2 pm.,asignado,2026-04-17
+113,Servicios La Candelaria S. en C.,900119703-7,Transporte y logística,2100,82301000000,Pereira,Occidente,campaña,Pidió que lo contacte alguien que conozca el sector.,asignado,2026-07-13
+114,Comercializadora Zipaquirá Ltda.,989306479-6,Manufactura,420,89717000000,Medellín,Antioquia,lista,"Registro cargado desde base comprada, sin validar.",asignado,2026-04-15
+115,Alimentos La Candelaria S.A.S.,950019483-0,Educación,260,15257000000,Manizales,Occidente,lista,"Quiere propuesta para siete sedes, no para una.",en_gestion,2026-07-07
+116,Constructora Pacífico Sur Ltda.,968312507-4,Metalmecánica,180,15752000000,Armenia,occidente,campaña,"Quiere propuesta para siete sedes, no para una.",en_gestion,2026-06-15
+117,Inversiones Zipaquirá S. en C.,963341883-9,Educación,420,100510000000,Bogotá,Centro,evento,"Ya fue cliente en 2023, se retiró por precio.",en_gestion,2026-06-20
+118,Transportes Sierra Nevada S.A.,971102444-4,Minería,40,2358000000,Cali,Occidente ,evento,"Registro cargado desde base comprada, sin validar.",descartado,2026-09-11
+119,Grupo Antares S.A.S.,976547797-8,,260,12371000000,Bogotá,CENTRO,web,Solicitó información de eficiencia energética para planta nueva.,en_gestion,2026-07-20
+120,Agropecuaria Yumbo S.A.S.,919131181-2,Tecnología,18,2079000000,Rionegro,antioquia,campaña,"Dejó los datos en el stand de la feria, mostró poco interés.",asignado,2026-03-17
+121,Grupo Las Palmas S.A.S.,972071238-3,Alimentos y bebidas,18,974000000,Palmira,Occidente ,referido,"Dejó los datos en el stand de la feria, mostró poco interés.",en_gestion,2026-03-03
+122,Alimentos Andina S.A.S.,921477628-1,Química,12,,Bogotá,Bogotá,lista,Insistió en hablar con alguien senior.,en_gestion,2026-04-20
+123,Distribuidora Los Nevados S.A.,943295347-6,Química,180,5286000000,Itagüí,Antioquia,referido,Lo refirió el gerente de una cuenta actual.,en_gestion,2026-04-04
+124,Transportes Santa Bárbara Ltda.,976366939-4,Metalmecánica,650,36256000000,Tunja,Centro,referido,Solicitó información de eficiencia energética para planta nueva.,asignado,2026-03-06
+125,Agropecuaria del Caribe S.A.S.,912615590-2,Construcción,260,13872000000,Santa Marta,Costa,evento,Tiene contrato vigente con otro proveedor hasta diciembre.,asignado,2026-06-18
+126,Grupo Antares Ltda.,984431371-4,Manufactura,18,2078000000,Barranquilla,Costa,web,Ya lo contactamos en marzo y pidió que no insistiéramos.,asignado,2026-04-09
+127,Industrias Vallecaucana S.A.S.,974404912-3,Agroindustria,8,1164000000,Barranquilla,COSTA,lista,,descartado,2026-07-23
+128,Manufacturas Puerto Colombia S.A.,999122678-3,Textil,,3535000000,Barranquilla,COSTA,lista,"Empresa familiar, decide el dueño directamente.",en_gestion,2026-03-06
+129,Textiles Zipaquirá S.A.S.,924793993-8,Agroindustria,180,3350000000,Rionegro,antioquia,lista,"Está comparando tres propuestas, decide este mes.",en_gestion,2026-08-05
+130,Inversiones Andina S. en C.,943652889-5,Metalmecánica,260,10343000000,Palmira,Occidente,lista,"Empresa familiar, decide el dueño directamente.",descartado,2026-05-08
+131,Soluciones Santa Bárbara Ltda.,987307044-1,Tecnología,2100,103772000000,Bogotá,,referido,Tiene contrato vigente con otro proveedor hasta diciembre.,asignado,2026-02-23
+132,Transportes Ecoandes S.A.,979914468-7,Transporte y logística,2100,77534000000,Barranquilla,COSTA,web,Insistió en hablar con alguien senior.,descartado,2026-03-14
+133,Comercializadora La Esperanza S.A.S.,997642854-5,Educación,420,52735000000,Manizales,Occidente,referido,Solicitó información de eficiencia energética para planta nueva.,asignado,2026-06-27
+134,Suministros Puerto Colombia S.A.S.,985249869-1,Alimentos y bebidas,80,17027000000,Cali,Occidente,campaña,"Empresa familiar, decide el dueño directamente.",descartado,2026-02-22
+135,Textiles El Dorado S.A.,968771901-2,Inmobiliario,2100,58860000000,Rionegro,Antioquia,evento,,en_gestion,2026-03-19
+136,Industrias Pacífico Sur Ltda.,921635922-9,Manufactura,8,935000000,Chía,CENTRO,evento,Lo refirió el gerente de una cuenta actual.,asignado,2026-08-06
+137,Suministros Tequendama S.A.S.,986075616-0,Inmobiliario,2100,98513000000,Cartagena,COSTA,web,Tiene contrato vigente con otro proveedor hasta diciembre.,descartado,2026-07-30
+138,Suministros El Dorado S. en C.,989442962-1,Textil,1400,51945000000,Rionegro,ANT,evento,"Registro cargado desde base comprada, sin validar.",en_gestion,2026-07-16
+139,Comercializadora Tequendama S.A.S.,930837795-7,Agroindustria,55,15692000000,Sincelejo,COSTA,web,"Quiere propuesta para siete sedes, no para una.",asignado,2026-06-08
+140,Soluciones Andina S.A.S.,982803777-0,Inmobiliario,650,110831000000,Cali,Occidente,evento,"Correo rebotado, el celular sí contesta.",en_gestion,2026-08-11
+141,Textiles San Rafael S.A.S.,976803309-1,Textil,420,67468000000,Itagüí,Antioquia,campaña,"Registro cargado desde base comprada, sin validar.",en_gestion,2026-09-13
+142,Servicios Girardot S. en C.,943511087-5,Transporte y logística,,10853000000,Pereira,Occidente ,lista,"Ya fue cliente en 2023, se retiró por precio.",descartado,2026-04-30
+143,Inversiones Puerto Colombia Ltda.,912366364-4,Inmobiliario,120,5259000000,Montería,costa,web,"Quiere propuesta para siete sedes, no para una.",en_gestion,2026-05-14
+144,Transportes El Dorado S. en C.,988262707-0,Agroindustria,55,17060000000,Rionegro,ANT,referido,Tiene contrato vigente con otro proveedor hasta diciembre.,en_gestion,2026-04-29
+145,Distribuidora Bolívar S. en C.,989666117-9,Salud,40,808000000,Rionegro,Antioquia,campaña,Tiene contrato vigente con otro proveedor hasta diciembre.,descartado,2026-03-03
+146,Transportes Chicamocha Ltda.,913327520-4,Inmobiliario,2100,67820000000,Bucaramanga,CENTRO,web,Tiene contrato vigente con otro proveedor hasta diciembre.,en_gestion,2026-05-08
+147,Textiles Tequendama S.A.S.,909648388-8,Minería,120,8820000000,Bogotá,Bogotá,campaña,"Dejó los datos en el stand de la feria, mostró poco interés.",asignado,2026-04-15
+148,Textiles Chicamocha S.A.,931872080-4,Tecnología,80,7020000000,Medellín,Antioquia,evento,"Registro cargado desde base comprada, sin validar.",asignado,2026-08-02
+149,Inversiones Cafetera Ltda.,927301428-8,Alimentos y bebidas,900,63612000000,Santa Marta,COSTA,lista,"Empresa familiar, decide el dueño directamente.",descartado,2026-06-05
+150,Industrias Orinoquía S.A.,955783089-2,Salud,18,2273000000,Montería,COSTA,lista,"Registro cargado desde base comprada, sin validar.",en_gestion,2026-05-29
+151,Servicios El Dorado S.A.,908912305-5,Metalmecánica,2100,78142000000,Medellín,Antioquia,campaña,"Empresa familiar, decide el dueño directamente.",en_gestion,2026-05-15
+152,Alimentos Puerto Colombia S.A.S.,986113293-8,Alimentos y bebidas,2100,18476000000,Sincelejo,Costa,evento,"Correo rebotado, el celular sí contesta.",en_gestion,2026-03-14
+153,Transportes Los Nevados S. en C.,970263385-3,Salud,260,8105000000,Rionegro,Antioquia,referido,"Ya fue cliente en 2023, se retiró por precio.",en_gestion,2026-09-05
+154,Grupo San Rafael S. en C.,901616024-3,Salud,25,736000000,Bucaramanga,Bogotá,referido,"Ya fue cliente en 2023, se retiró por precio.",asignado,2026-07-21
+155,Soluciones San Rafael S.A.S.,955331747-7,Manufactura,25,2015000000,Cali,Occidente,referido,"Correo rebotado, el celular sí contesta.",descartado,2026-02-28
+156,Servicios del Caribe S.A.,931274163-9,Salud,900,23102000000,Cali,Occidente ,referido,Lo refirió el gerente de una cuenta actual.,en_gestion,2026-02-28
+157,Logística La Candelaria S.A.S.,987408217-6,Agroindustria,260,11858000000,Villavicencio,CENTRO,referido,"Quiere propuesta para siete sedes, no para una.",en_gestion,2026-07-19
+158,Suministros La Candelaria S. en C.,950002299-3,Retail,40,1411000000,Armenia,Occidente,lista,"Quiere propuesta para siete sedes, no para una.",en_gestion,2026-09-15
+159,Textiles del Caribe S.A.,955875727-7,Metalmecánica,80,8480000000,Palmira,occidente,evento,"Registro cargado desde base comprada, sin validar.",asignado,2026-08-11
+160,Suministros Orinoquía S.A.S.,984941390-6,Educación,55,10592000000,Rionegro,Antioquia,evento,"Ya fue cliente en 2023, se retiró por precio.",descartado,2026-04-20
+161,Distribuidora Tequendama S.A.S.,986957756-4,Construcción,80,4339000000,Bogotá,CENTRO,referido,Insistió en hablar con alguien senior.,en_gestion,2026-07-16
+162,Servicios Los Nevados S. en C.,922686798-0,Construcción,8,1984000000,Pereira,occidente,campaña,"Está comparando tres propuestas, decide este mes.",asignado,2026-07-07
+163,Distribuidora El Dorado Ltda.,997518845-0,Tecnología,260,7278000000,Cartagena,Costa,campaña,,descartado,2026-05-11
+164,Transportes El Poblado S. en C.,956526668-3,Salud,900,116980000000,Cartagena,COSTA,campaña,Solicitó información de eficiencia energética para planta nueva.,en_gestion,2026-04-09
+165,Comercializadora Andina S.A.S.,955278388-6,Salud,40,2156000000,Palmira,Occidente ,lista,"Posible duplicado, entró por otra fuente.",nuevo,2026-09-10
+166,Inversiones El Poblado Ltda.,950445842-8,Alimentos y bebidas,55,8320000000,Manizales,Occidente ,lista,"Posible duplicado, entró por otra fuente.",nuevo,2026-09-15
+167,Transportes Caribe Azul S.A.,982752478-1,Alimentos y bebidas,18,1854000000,Bogotá,Bogotá,lista,"Posible duplicado, entró por otra fuente.",nuevo,2026-09-11

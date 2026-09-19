@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Sales Assignment — Secuencia de asignación",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1650,
+      810
+    ],
+    "column_fit": "spread"
+  },
+  "participants": [
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "Streamlit"
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "FastAPI"
+    },
+    {
+      "id": "engine",
+      "type": "backend",
+      "label": "Assignment Engine"
+    },
+    {
+      "id": "llm",
+      "type": "external",
+      "label": "LLM API"
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "PostgreSQL"
+    }
+  ],
+  "segments": [
+    {
+      "from": 150,
+      "to": 422,
+      "label": "Vista previa"
+    },
+    {
+      "from": 430,
+      "to": 534,
+      "label": "Ejecución aprobada"
+    },
+    {
+      "from": 542,
+      "to": 730,
+      "label": "Explicación opcional"
+    }
+  ],
+  "messages": [
+    {
+      "id": "sales-msg-1",
+      "from": "ui",
+      "to": "api",
+      "y": 160,
+      "label": "Solicitar vista previa",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-2",
+      "from": "api",
+      "to": "db",
+      "y": 188,
+      "label": "Cargar estado actual",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-3",
+      "from": "db",
+      "to": "api",
+      "y": 216,
+      "label": "Registros y vendedores",
+      "variant": "return"
+    },
+    {
+      "id": "sales-msg-4",
+      "from": "api",
+      "to": "engine",
+      "y": 244,
+      "label": "Generar propuestas",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-5",
+      "from": "engine",
+      "to": "llm",
+      "y": 272,
+      "label": "Extraer señales (cond.)",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-6",
+      "from": "llm",
+      "to": "engine",
+      "y": 300,
+      "label": "Señales por validar",
+      "variant": "return"
+    },
+    {
+      "id": "sales-msg-7",
+      "from": "engine",
+      "to": "api",
+      "y": 328,
+      "label": "Asignaciones y motivos",
+      "variant": "return"
+    },
+    {
+      "id": "sales-msg-8",
+      "from": "api",
+      "to": "db",
+      "y": 356,
+      "label": "Guardar preview y traza",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-9",
+      "from": "db",
+      "to": "api",
+      "y": 384,
+      "label": "Identificador de preview",
+      "variant": "return"
+    },
+    {
+      "id": "sales-msg-10",
+      "from": "api",
+      "to": "ui",
+      "y": 412,
+      "label": "Mostrar vista previa",
+      "variant": "return"
+    },
+    {
+      "id": "sales-msg-11",
+      "from": "ui",
+      "to": "api",
+      "y": 440,
+      "label": "Ejecutar aprobada",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-12",
+      "from": "api",
+      "to": "db",
+      "y": 468,
+      "label": "Revalidar y confirmar",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-13",
+      "from": "db",
+      "to": "api",
+      "y": 496,
+      "label": "Resultado de ejecución",
+      "variant": "return"
+    },
+    {
+      "id": "sales-msg-14",
+      "from": "api",
+      "to": "ui",
+      "y": 524,
+      "label": "Confirmación o rechazo",
+      "variant": "return"
+    },
+    {
+      "id": "sales-msg-15",
+      "from": "ui",
+      "to": "api",
+      "y": 552,
+      "label": "Explicación IA (opcional)",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-16",
+      "from": "api",
+      "to": "engine",
+      "y": 580,
+      "label": "Cargar traza de decisión",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-17",
+      "from": "engine",
+      "to": "llm",
+      "y": 608,
+      "label": "Explicar solo la traza",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-18",
+      "from": "llm",
+      "to": "engine",
+      "y": 636,
+      "label": "Explicación en texto",
+      "variant": "return"
+    },
+    {
+      "id": "sales-msg-19",
+      "from": "engine",
+      "to": "api",
+      "y": 664,
+      "label": "Explicación",
+      "variant": "return"
+    },
+    {
+      "id": "sales-msg-20",
+      "from": "api",
+      "to": "db",
+      "y": 692,
+      "label": "Guardar auditoría IA",
+      "variant": "default"
+    },
+    {
+      "id": "sales-msg-21",
+      "from": "api",
+      "to": "ui",
+      "y": 720,
+      "label": "Mostrar explicación",
+      "variant": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Reglas y señales",
+      "items": [
+        "Aplicar primero mapeos deterministas; consultar el LLM solo si la interpretación no es confiable.",
+        "Validar señales antes de usarlas. El motor aplica elegibilidad y el método seleccionado."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Ejecución y auditoría",
+      "items": [
+        "Si los datos cambiaron, rechazar y generar otra vista previa.",
+        "Confirmar juntas las asignaciones válidas y registrar eventos de auditoría inmutables."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "IA opcional",
+      "items": [
+        "Solo usa la traza; no cambia al vendedor. Su fallo no bloquea la asignación.",
+        "La explicación determinista es oficial. Guardar prompt, modelo, respuesta y fecha."
+      ]
+    }
+  ]
+}

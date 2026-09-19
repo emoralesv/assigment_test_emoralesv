@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "deliver",
+  "type": "sequence",
+  "input": "/home/emoralesv/Dev/work/sales_assignment_sequence.archify.json",
+  "output": "/home/emoralesv/Dev/work/sales_assignment_sequence.html",
+  "specification": {
+    "sha256": "31f1457200ea6e4d12f4290936c6d0fa48922f05ae1c205d19df85992a2b119c",
+    "bytes": 5303
+  },
+  "artifact": {
+    "sha256": "400c2e720a3ce3d7e7b5b3318f20064d60312f801ea70794d1fd23889c10e6f3",
+    "bytes": 813040
+  },
+  "validation": {
+    "checksPassed": 9,
+    "checkCount": 9,
+    "compositionProfile": "showcase",
+    "compositionStatus": "pass",
+    "errors": 0,
+    "warnings": 0
+  }
+}

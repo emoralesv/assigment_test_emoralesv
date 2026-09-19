@@ -1,0 +1,10 @@
+# Optional: grants the API Docker control for a local self-healing Ollama service.
+# Run together with docker-compose.yml only on hosts where this trust boundary is intended.
+services:
+  api:
+    environment:
+      DOCKER_BOOTSTRAP_ENABLED: "true"
+      DOCKER_BOOTSTRAP_NETWORK: project_default
+      OLLAMA_BOOTSTRAP_CONTAINER: sales-assignment-ollama
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

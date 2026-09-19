@@ -1,0 +1,75 @@
+prompt_version,note_template_id,case_id,source,raw_note,expected_output,model_output,json_valid,schema_valid,field_matches,field_mismatches,hard_decision_match,latency,error,unsupported_fields
+note_extraction_v1,NOTE-001,NOTE-001,original,"Registro cargado desde base comprada, sin validar.","{""requirements"": [], ""signals"": [""unvalidated_source""], ""constraints"": [], ""priority"": ""normal"", ""action"": ""validate_first"", ""details"": {""unvalidated_source"": true, ""former_customer"": false, ""price_sensitive"": false, ""competitive_process"": false, ""existing_contract"": false, ""referral_from_current_account"": false, ""low_interest"": false, ""seniority_requested"": false, ""sector_expertise_requested"": false, ""do_not_contact"": false, ""possible_duplicate"": false, ""requires_manual_review"": false, ""account_complexity"": ""unknown"", ""urgency"": ""normal"", ""preferred_contact_channel"": null, ""data_confidence"": ""low"", ""assignment_action"": ""validate_first"", ""decision_maker_type"": null, ""technical_expertise"": null, ""decision_window"": null, ""contact_after_time"": null, ""site_count"": null, ""competitor_count"": null}, ""needs_review"": false, ""reason_codes"": [""ACTION"", ""DATA_CONFIDENCE"", ""UNVALIDATED_SOURCE""]}","{
+  ""requirements"": [
+    ""seniority_requested"",
+    ""sector_expertise_requested"",
+    ""technical_expertise""
+  ],
+  ""signals"": [
+    ""unvalidated_source"",
+    ""former_customer"",
+    ""price_sensitive"",
+    ""competitive_process"",
+    ""existing_contract"",
+    ""referral_from_current_account"",
+    ""low_interest"",
+    ""possible_duplicate""
+  ],
+  ""constraints"": [
+    ""do_not_contact"",
+    ""contact_after_time""
+  ],
+  ""priority"": ""normal"",
+  ""action"": ""validate_first"",
+  ""details"": {
+    ""unvalidated_source"": true,
+    ""former_customer"": false,
+    ""price_sensitive"": false,
+    ""competitive_process"": false,
+    ""existing_contract"": false,
+    ""referral_from_current_account"": false,
+    ""low_interest"": false,
+    ""seniority_requested"": false,
+    ""sector_expertise_requested"": false,
+    ""do_not_contact"": false,
+    ""possible_duplicate"": false,
+    ""requires_manual_review"": false,
+    ""account_complexity"": ""standard"",
+    ""urgency"": ""normal"",
+    ""preferred_contact_channel"": null,
+    ""data_confidence"": ""medium"",
+    ""assignment_action"": ""validate_first"",
+    ""decision_maker_type"": null,
+    ""technical_expertise"": null,
+    ""decision_window"": null,
+    ""contact_after_time"": null,
+    ""site_count"": null,
+    ""competitor_count"": null
+  },
+  ""needs_review"": false,
+  ""reason_codes"": [
+    ""UNVALIDATED_SOURCE"",
+    ""FORMER_CUSTOMER"",
+    ""PRICE_SENSITIVE"",
+    ""COMPETITIVE_PROCESS"",
+    ""EXISTING_CONTRACT"",
+    ""REFERRAL_FROM_CURRENT_ACCOUNT"",
+    ""LOW_INTEREST"",
+    ""SENIORITY_REQUESTED"",
+    ""SECTOR_EXPERTISE_REQUESTED"",
+    ""DO_NOT_CONTACT"",
+    ""POSSIBLE_DUPLICATE"",
+    ""REQUIRES_MANUAL_REVIEW"",
+    ""COMPLEX_ACCOUNT"",
+    ""URGENCY"",
+    ""CONTACT_CHANNEL"",
+    ""DATA_CONFIDENCE"",
+    ""ACTION"",
+    ""OWNER_DECISION_MAKER"",
+    ""ENERGY_EFFICIENCY"",
+    ""DECISION_WINDOW"",
+    ""CONTACT_AFTER_TIME"",
+    ""SITE_COUNT"",
+    ""COMPETITOR_COUNT""
+  ]
+}",True,True,"[""action"", ""details.assignment_action"", ""details.competitive_process"", ""details.competitor_count"", ""details.contact_after_time"", ""details.decision_maker_type"", ""details.decision_window"", ""details.do_not_contact"", ""details.existing_contract"", ""details.former_customer"", ""details.low_interest"", ""details.possible_duplicate"", ""details.preferred_contact_channel"", ""details.price_sensitive"", ""details.referral_from_current_account"", ""details.requires_manual_review"", ""details.sector_expertise_requested"", ""details.seniority_requested"", ""details.site_count"", ""details.technical_expertise"", ""details.unvalidated_source"", ""details.urgency"", ""needs_review"", ""priority""]","[{""field"": ""constraints"", ""expected"": [], ""actual"": [""contact_after_time"", ""do_not_contact""], ""missing"": false, ""extra"": false}, {""field"": ""details.account_complexity"", ""expected"": ""unknown"", ""actual"": ""standard"", ""missing"": false, ""extra"": false}, {""field"": ""details.data_confidence"", ""expected"": ""low"", ""actual"": ""medium"", ""missing"": false, ""extra"": false}, {""field"": ""reason_codes"", ""expected"": [""ACTION"", ""DATA_CONFIDENCE"", ""UNVALIDATED_SOURCE""], ""actual"": [""ACTION"", ""COMPETITIVE_PROCESS"", ""COMPETITOR_COUNT"", ""COMPLEX_ACCOUNT"", ""CONTACT_AFTER_TIME"", ""CONTACT_CHANNEL"", ""DATA_CONFIDENCE"", ""DECISION_WINDOW"", ""DO_NOT_CONTACT"", ""ENERGY_EFFICIENCY"", ""EXISTING_CONTRACT"", ""FORMER_CUSTOMER"", ""LOW_INTEREST"", ""OWNER_DECISION_MAKER"", ""POSSIBLE_DUPLICATE"", ""PRICE_SENSITIVE"", ""REFERRAL_FROM_CURRENT_ACCOUNT"", ""REQUIRES_MANUAL_REVIEW"", ""SECTOR_EXPERTISE_REQUESTED"", ""SENIORITY_REQUESTED"", ""SITE_COUNT"", ""UNVALIDATED_SOURCE"", ""URGENCY""], ""missing"": false, ""extra"": false}, {""field"": ""requirements"", ""expected"": [], ""actual"": [""sector_expertise_requested"", ""seniority_requested"", ""technical_expertise""], ""missing"": false, ""extra"": false}, {""field"": ""signals"", ""expected"": [""unvalidated_source""], ""actual"": [""competitive_process"", ""existing_contract"", ""former_customer"", ""low_interest"", ""possible_duplicate"", ""price_sensitive"", ""referral_from_current_account"", ""unvalidated_source""], ""missing"": false, ""extra"": false}]",True,165.746,,"[""requirements"", ""signals"", ""constraints"", ""details.account_complexity"", ""reason_codes""]"

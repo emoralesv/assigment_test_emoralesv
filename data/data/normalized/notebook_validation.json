@@ -1,0 +1,13 @@
+{
+  "artifact": "normalization_workflow.ipynb",
+  "sha256": "f2a2f01a6798bc96f66b10f02703b41298412694a2ddb38b7263a3d0bde0ec32",
+  "validation": "nbformat + complete nbclient execution in temporary project copy",
+  "initial_output_directory": "absent",
+  "code_cells_executed": 12,
+  "automated_tests_passed": 15,
+  "all_expected_dataset_checks_matched": true,
+  "llm_calls": 0,
+  "original_csv_hashes_verified": true,
+  "delivered_notebook_outputs": "empty",
+  "model_evaluation": "incomplete; user-controlled optional notebook cells"
+}

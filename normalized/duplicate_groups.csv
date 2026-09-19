@@ -1,0 +1,4 @@
+group_id,table_name,field_name,normalized_value,row_ids,source_rows,count
+DUP-001,registros,nit,9552783886,"[""2"", ""165""]","[3, 166]",2
+DUP-002,registros,nit,9504458428,"[""31"", ""166""]","[32, 167]",2
+DUP-003,registros,nit,9827524781,"[""74"", ""167""]","[75, 168]",2
