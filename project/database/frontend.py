@@ -4,8 +4,8 @@ from datetime import datetime, timezone
 import re
 import uuid
 from psycopg.types.json import Jsonb
-from assigment_test_emoralesv.normalization.notes import VALIDATOR
-from assigment_test_emoralesv.project.assignment_engine.domain import candidate_exclusions, record_exclusions
+from normalization.notes import VALIDATOR
+from project.assignment_engine.domain import candidate_exclusions, record_exclusions
 from .workflows import get_state, NotFound, Conflict
 
 TECHNICAL_SKILL_CATALOG={

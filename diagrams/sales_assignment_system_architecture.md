@@ -11,7 +11,8 @@ The system uses a Streamlit frontend, a FastAPI application API, an independent 
 | Component | Responsibility |
 |---|---|
 | Streamlit Frontend | Data review, record selection, method configuration, preview, execution, reassignment, and audit views. |
-| FastAPI Application API | Entry point for the frontend. Coordinates validation, previews, execution, persistence, and audit operations. |
+| FastAPI Application API | Entry point for the frontend and external portal. Coordinates validation, previews, execution, persistence, and audit operations. |
+| Database API | Private persistence boundary; the only service that connects to PostgreSQL. |
 | Assignment Engine | Applies eligibility rules, builds seller profiles, runs the selected assignment method, and returns structured reasons. |
 | LLM API | Independent Dockerized service used for note interpretation and optional natural-language explanations. |
 | PostgreSQL | Stores cleaned data, extracted signals, seller profiles, previews, assignments, and immutable audit events. |
@@ -20,14 +21,15 @@ The system uses a Streamlit frontend, a FastAPI application API, an independent 
 
 ```mermaid
 flowchart LR
+    EXT["External user / capture portal"] -->|HTTPS + integration token| API
     UI["Streamlit Frontend"] --> API["FastAPI Application API"]
     API --> ENG["Assignment Engine"]
-    API --> DB["PostgreSQL"]
+    API --> DATA["Database API"]
+    DATA --> DB["PostgreSQL private network"]
     ENG --> LLM["Dockerized LLM API"]
-    ENG --> DB
 ```
 
-Streamlit does not assign records directly. It requests a preview from FastAPI, displays the result, and asks FastAPI to execute the approved preview.
+Streamlit does not assign records directly. It requests a preview from FastAPI, displays the result, and asks FastAPI to execute the approved preview. The external portal only creates records in status `nuevo`; it cannot view sellers or execute assignments.
 
 ## 4. Main Workflow
 

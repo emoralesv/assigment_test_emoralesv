@@ -5,8 +5,8 @@ from copy import deepcopy
 import re
 import urllib.request
 from pathlib import Path
-from assigment_test_emoralesv.normalization.common import ROOT
-from assigment_test_emoralesv.normalization.notes import SCHEMA, VALIDATOR
+from normalization.common import ROOT
+from normalization.notes import SCHEMA, VALIDATOR
 
 
 class ModelNotReadyError(RuntimeError):pass
@@ -59,7 +59,7 @@ class OllamaClient:
             result['raw_output']=raw;proposal=json.loads(raw)
             from jsonschema import validate
             validate(proposal,REVIEW_SCHEMA)
-            from assigment_test_emoralesv.normalization.notes import neutral
+            from normalization.notes import neutral
             # The small model is only advisory. A proposed requirement must also be
             # grounded in the record's own note before it can reach a human reviewer.
             note=(record.get('notes') or '').casefold()

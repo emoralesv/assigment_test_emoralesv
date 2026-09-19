@@ -14,12 +14,13 @@ from psycopg import sql
 from psycopg.rows import dict_row
 from psycopg_pool import ConnectionPool, PoolTimeout
 
-from assigment_test_emoralesv.normalization.common import ROOT
-from assigment_test_emoralesv.project.assignment_engine.contracts import StateRequest, PreviewRequest, ExecuteRequest
+from normalization.common import ROOT
+from project.assignment_engine.contracts import StateRequest, PreviewRequest, ExecuteRequest
 from . import frontend
 from .safety import from_environment, validate
 from .importer import reset, TABLES
 from . import workflows
+from . import integrations
 from datetime import datetime
 
 TableName=Enum('TableName',{name:name for name in TABLES},type=str)
@@ -90,6 +91,18 @@ class ManualAssignmentsRequest(BaseModel):
     model_config=ConfigDict(extra='forbid')
     assignments: list[dict]=Field(min_length=1,max_length=100)
 
+class ExternalRecordRequest(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    integration_id:str=Field(min_length=2,max_length=100)
+    external_reference:str=Field(min_length=1,max_length=150)
+    company_name:str=Field(min_length=2,max_length=250)
+    nit:str|None=Field(default=None,max_length=80)
+    sector:str|None=Field(default=None,max_length=150)
+    estimated_revenue:float|None=Field(default=None,ge=0)
+    city:str|None=Field(default=None,max_length=120)
+    zone:str|None=Field(default=None,max_length=120)
+    notes:str|None=Field(default=None,max_length=8000)
+
 
 def create_app(config=None,api_token=None,admin_token=None,input_directory=None):
     reset_lock=threading.Lock()
@@ -130,6 +143,10 @@ def create_app(config=None,api_token=None,admin_token=None,input_directory=None)
                 team_id text REFERENCES sales_assignment.teams(id), zone text, maximum_capacity integer,
                 availability_override boolean NOT NULL DEFAULT false, reason text NOT NULL,
                 updated_at timestamptz NOT NULL DEFAULT now(), CHECK (maximum_capacity >= 0))''')
+            conn.execute('''CREATE TABLE IF NOT EXISTS sales_assignment.external_record_submissions (
+                id uuid PRIMARY KEY, integration_id text NOT NULL, external_reference text NOT NULL,
+                record_id text NOT NULL REFERENCES sales_assignment.records(id), status text NOT NULL, payload jsonb NOT NULL,
+                received_at timestamptz NOT NULL DEFAULT now(), UNIQUE(integration_id,external_reference))''')
         try:yield
         finally:pool.close()
 
@@ -229,6 +246,10 @@ def create_app(config=None,api_token=None,admin_token=None,input_directory=None)
     @app.patch('/ui/records/{record_id}/signals',dependencies=[Depends(service_access)])
     def ui_edit(record_id:str,body:SignalEditRequest):
         with connection() as conn:return frontend.edit_signals(conn,record_id,body.model_dump())
+
+    @app.post('/integrations/external-records',status_code=201,dependencies=[Depends(service_access)])
+    def external_record(body:ExternalRecordRequest):
+        with connection() as conn:return integrations.create_external_record(conn,body.model_dump())
 
     @app.get('/ui/audit',dependencies=[Depends(service_access)])
     def ui_audit(offset:int=Query(0,ge=0),limit:int=Query(50,ge=1,le=100)):

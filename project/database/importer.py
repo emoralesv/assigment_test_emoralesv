@@ -16,7 +16,7 @@ from psycopg import sql
 from psycopg.types.json import Jsonb
 from jsonschema import Draft202012Validator
 
-from assigment_test_emoralesv.normalization.common import ROOT
+from normalization.common import ROOT
 from .safety import SCHEMA, SCHEMA_MARKER, SafetyError, validate, from_environment
 
 REQUIRED = ('usuarios.csv', 'equipos.csv', 'registros.csv', 'ausencias.csv', 'actividad.csv',

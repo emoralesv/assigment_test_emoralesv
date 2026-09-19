@@ -4,7 +4,7 @@ from urllib.parse import quote
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-from assigment_test_emoralesv.project.frontend.streamlit_app.client import APIClient, APIError, PreviewWorkflow
+from project.frontend.streamlit_app.client import APIClient, APIError, PreviewWorkflow
 
 st.set_page_config(page_title='Asignación comercial',page_icon='◈',layout='wide')
 st.title('Asignación comercial')
@@ -77,22 +77,22 @@ def table(items,columns=None):
 
 
 def dashboard():
-    from assigment_test_emoralesv.project.frontend.streamlit_app.dashboard_view import render
+    from project.frontend.streamlit_app.dashboard_view import render
     render(client)
 
 
 def records():
-    from assigment_test_emoralesv.project.frontend.streamlit_app.review_worklist import render
+    from project.frontend.streamlit_app.review_worklist import render
     render(client,workflow)
 
 
 def sellers():
-    from assigment_test_emoralesv.project.frontend.streamlit_app.sellers_view import render
+    from project.frontend.streamlit_app.sellers_view import render
     render(client,workflow)
 
 
 def assignment():
-    from assigment_test_emoralesv.project.frontend.streamlit_app.assignment_view import render
+    from project.frontend.streamlit_app.assignment_view import render
     render(client,workflow)
 
 
@@ -156,11 +156,11 @@ def audit():
         table(data['events'],['company_name','seller_name','event_type','created_at','payload'])
 
 def load_analysis():
-    from assigment_test_emoralesv.project.frontend.streamlit_app.load_view import render
+    from project.frontend.streamlit_app.load_view import render
     render(client)
 
 def historical_analysis():
-    from assigment_test_emoralesv.project.frontend.streamlit_app.load_view import render
+    from project.frontend.streamlit_app.load_view import render
     render(client,historical=True)
 
 try:

@@ -11,8 +11,8 @@ from zoneinfo import ZoneInfo
 from fastapi.encoders import jsonable_encoder
 from psycopg import sql
 from psycopg.types.json import Jsonb
-from assigment_test_emoralesv.project.assignment_engine.domain import validate_plan, effective_signals
-from assigment_test_emoralesv.normalization.common import ROOT
+from project.assignment_engine.domain import validate_plan, effective_signals
+from normalization.common import ROOT
 
 
 class Conflict(ValueError):pass

@@ -57,6 +57,8 @@ services:
       OLLAMA_DEFAULT_MODEL: ${OLLAMA_DEFAULT_MODEL:-llama3.2:1b}
       OLLAMA_TIMEOUT_SECONDS: ${OLLAMA_TIMEOUT_SECONDS:-30}
       OLLAMA_EXPLANATION_TIMEOUT_SECONDS: ${OLLAMA_EXPLANATION_TIMEOUT_SECONDS:-180}
+      EXTERNAL_INGEST_API_TOKEN: ${EXTERNAL_INGEST_API_TOKEN:-local-external-integration-change-before-deployment}
+      EXTERNAL_PORTAL_ORIGIN: http://localhost:${EXTERNAL_PORTAL_PORT:-8600}
     depends_on:
       database_api: {condition: service_healthy}
     healthcheck:
@@ -81,6 +83,15 @@ services:
       interval: 5s
       timeout: 3s
       retries: 12
+    restart: unless-stopped
+
+  external_portal:
+    build:
+      context: ..
+      dockerfile: project/external_portal/Dockerfile
+    ports: ["127.0.0.1:${EXTERNAL_PORTAL_PORT:-8600}:80"]
+    depends_on:
+      api: {condition: service_healthy}
     restart: unless-stopped
 
   llm_service:

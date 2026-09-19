@@ -4,18 +4,20 @@ from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager
 from uuid import UUID
 import httpx
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Depends
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi.middleware.cors import CORSMiddleware
 from urllib.parse import urlencode, quote
 from pydantic import BaseModel, ConfigDict, Field
 from datetime import datetime
 from statistics import pstdev
-from assigment_test_emoralesv.project.assignment_engine.contracts import PreviewRequest, ExecuteRequest, StateRequest, Configuration
-from assigment_test_emoralesv.project.assignment_engine.simulation import Simulations, project, historical_examples
-from assigment_test_emoralesv.project.assignment_engine.models import CapacityAware, FuzzyOptimal, AIAssisted
-from assigment_test_emoralesv.project.assignment_engine.domain import candidate_exclusions
-from assigment_test_emoralesv.project.assignment_engine.llm import OllamaClient
-from assigment_test_emoralesv.project.assignment_engine.model_setup import canonical
-from assigment_test_emoralesv.project.api.docker_bootstrap import DockerBootstrap
+from project.assignment_engine.contracts import PreviewRequest, ExecuteRequest, StateRequest, Configuration
+from project.assignment_engine.simulation import Simulations, project, historical_examples
+from project.assignment_engine.models import CapacityAware, FuzzyOptimal, AIAssisted
+from project.assignment_engine.domain import candidate_exclusions
+from project.assignment_engine.llm import OllamaClient
+from project.assignment_engine.model_setup import canonical
+from project.api.docker_bootstrap import DockerBootstrap
 
 class DatabaseClient:
     def request(self, method, path, body=None, admin=False):
@@ -74,6 +76,17 @@ class DatabaseResetRequest(BaseModel):
     model_config=ConfigDict(extra='forbid')
     confirm_reset: bool
 
+class ExternalRecordRequest(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    external_reference:str=Field(min_length=1,max_length=150)
+    company_name:str=Field(min_length=2,max_length=250)
+    nit:str|None=Field(default=None,max_length=80)
+    sector:str|None=Field(default=None,max_length=150)
+    estimated_revenue:float|None=Field(default=None,ge=0)
+    city:str|None=Field(default=None,max_length=120)
+    zone:str|None=Field(default=None,max_length=120)
+    notes:str|None=Field(default=None,max_length=8000)
+
 def create_app(database=None,llm=None):
     database=database or DatabaseClient();llm=llm or OllamaClient()
     docker_bootstrap=DockerBootstrap()
@@ -127,6 +140,13 @@ def create_app(database=None,llm=None):
         try:yield
         finally:analyzer.shutdown(wait=False,cancel_futures=True)
     app=FastAPI(title='Sales Assignment API',version='1.0.0',lifespan=lifespan)
+    origin=os.environ.get('EXTERNAL_PORTAL_ORIGIN','')
+    if origin:app.add_middleware(CORSMiddleware,allow_origins=[origin],allow_methods=['POST'],allow_headers=['Authorization','Content-Type'])
+    external_auth=HTTPBearer(auto_error=False,scheme_name='ExternalIntegrationToken')
+    def external_access(credentials:HTTPAuthorizationCredentials|None=Depends(external_auth)):
+        expected=os.environ.get('EXTERNAL_INGEST_API_TOKEN','')
+        if not expected or credentials is None or not __import__('secrets').compare_digest(credentials.credentials,expected):
+            raise HTTPException(401,'Clave de integración externa inválida')
     simulations=Simulations(models)
 
     @app.get('/health')
@@ -175,6 +195,11 @@ def create_app(database=None,llm=None):
         report=database.request('POST','/admin/reset',{'confirm_reset':True},admin=True)
         return {'message':'Base de datos inicializada con los datos normalizados.','report':report}
 
+    @app.post('/external/records',status_code=201,dependencies=[Depends(external_access)])
+    def external_record(body:ExternalRecordRequest):
+        payload=body.model_dump();payload['integration_id']='external_portal'
+        return database.request('POST','/integrations/external-records',payload)
+
     @app.get('/load-analysis')
     def load_analysis():
         state=database.request('GET','/ui/load')
@@ -208,7 +233,7 @@ def create_app(database=None,llm=None):
 
     @app.post('/simulations/{simulation_id}/{method}/explanation')
     def simulation_explanation(simulation_id:UUID,method:str,body:InspectionQuestion):
-        from assigment_test_emoralesv.project.assignment_engine.inspection import context,render_selection
+        from project.assignment_engine.inspection import context,render_selection
         try:job=simulations.get(str(simulation_id),private=True)
         except KeyError:raise HTTPException(404,'Simulación no disponible; genera una nueva.') from None
         if method not in models:raise HTTPException(422,'Modelo no válido.')
@@ -225,7 +250,7 @@ def create_app(database=None,llm=None):
 
     @app.post('/simulations/{simulation_id}/summary')
     def simulation_summary(simulation_id:UUID):
-        from assigment_test_emoralesv.project.assignment_engine.inspection import simulation_summary as build_summary
+        from project.assignment_engine.inspection import simulation_summary as build_summary
         try:job=simulations.get(str(simulation_id),private=True)
         except KeyError:raise HTTPException(404,'Simulación no disponible; genera una nueva.') from None
         try:evidence,deterministic=build_summary(job)

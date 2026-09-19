@@ -1,155 +1,156 @@
-# Sales assignment: normalización y extracción de notas
-
-El proyecto conserva los CSV fuente, genera artefactos reproducibles en `normalized/` y permite cargar PostgreSQL mediante un reinicio local controlado. El motor ofrece tres métodos de asignación mediante FastAPI; la interfaz Streamlit incluye Dashboard, Registros, Vendedores, Asignación, Auditoría, Carga y simulación y Prueba histórica. PostgreSQL es accesible por los componentes únicamente mediante la API de base de datos.
+# Sistema de asignación comercial
 
 > Uso exclusivo de evaluación. Consulta [LICENSE](LICENSE): no se autoriza uso productivo, comercial, redistribución ni modificaciones sin permiso escrito.
 
-## Instalación, ejecución e inicialización
+Plataforma para revisar registros comerciales, generar propuestas de asignación y guardar trazabilidad auditable. Los registros entran desde datos normalizados o desde el portal externo; nunca se asignan al recibirlos.
 
-Requisitos: Docker Engine con Docker Compose v2. Para trabajar con notebooks o ejecutar pruebas fuera de contenedores, también necesitas Python 3.11 y Conda o `venv`.
+## Producto y supuestos
 
-Primero crea la configuración local. No subas `.env` al repositorio: contiene las claves de la base de datos.
+El sistema conserva el racional de las decisiones: registra los cambios de un registro, las propuestas, las asignaciones ejecutadas y sus eventos de auditoría. La explicación se construye a partir de esa traza determinista. Un LLM puede convertirla en lenguaje natural, pero no sustituye el registro oficial de la decisión.
+
+El panel tiene siete áreas operativas: Resumen, Registros, Vendedores, Asignación, Auditoría, Simulación de lote y Comparación histórica. Además, incluye un panel compacto para comprobar la disponibilidad de base de datos, API y servicio de IA.
+
+## Racional de diseño
+
+Se analizaron los datos proporcionados, su estructura y la cantidad de historial disponible. No había evidencia suficiente para entrenar de forma confiable un modelo supervisado que reprodujera decisiones históricas, ni para justificar un enfoque de aprendizaje autosupervisado cuya función objetivo no estuviera validada por el negocio.
+
+Por ello, se eligió una arquitectura determinista con reglas verificables y una optimización explícita de dos variables: equilibrio de carga relativa y distribución de montos estimados. Ambas variables se controlan mediante parámetros visibles en la simulación y en la asignación.
+
+Los LLM son adecuados para interpretar texto, extraer patrones de notas y redactar explicaciones basadas en contexto. No se utilizan como optimizador principal: un algoritmo especializado permite menor costo, tiempos más predecibles, mantenimiento más sencillo y explicaciones verificables.
+
+## Métodos de asignación
+
+Se mantienen tres métodos para contrastar resultados y entender sus compromisos:
+
+- **Capacity-aware**: aplica restricciones de elegibilidad y favorece capacidad disponible y menor utilización.
+- **Fuzzy optimal**: utiliza reglas graduales de afinidad, seniority, experiencia y capacidad antes de equilibrar el lote.
+- **AI-assisted**: incorpora señales estructuradas extraídas de notas, sin omitir restricciones obligatorias ni sustituir la aprobación humana.
+
+Los métodos generan previews comparables. El método de IA puede tardar más y consumir más recursos porque debe interpretar notas; no sustituye los algoritmos de optimización ni ejecuta decisiones por su cuenta.
+
+## Calidad de registros, vendedores y auditoría
+
+El análisis de datos mostró registros incompletos o no normalizados. Por eso los registros externos entran primero en una bandeja de revisión. Una heurística identifica notas y campos que requieren atención; Ollama puede proponer requisitos como vendedor senior, experiencia sectorial o especialidad técnica. La propuesta no modifica el registro hasta que un usuario interno la acepta o la edita.
+
+La pestaña **Vendedores** permite revisar restricciones que afectan la elegibilidad: ausencias, capacidad, zona, equipo, actividad y habilidades técnicas verificables. Esto permite distinguir un problema de datos de una restricción operativa real.
+
+La pestaña **Auditoría** muestra asignaciones, cambios, eventos y la traza oficial. El usuario puede pedir una explicación asistida por IA a partir de la traza y una consulta concreta; si el modelo falla, la explicación determinista permanece disponible.
+
+## Arquitectura
+
+```text
+Usuario externo → Portal externo → FastAPI → Database API → PostgreSQL privado
+Usuario interno → Streamlit      → FastAPI → Motor de asignación / Ollama
+```
+
+FastAPI coordina reglas de negocio e integración. Database API es el único servicio conectado a PostgreSQL. El motor evalúa elegibilidad, compatibilidad y equilibrio; Ollama propone señales y explicaciones sin bloquear el flujo determinista.
+
+Consulta el diagrama de [secuencia](/diagrams/sales_assignment_sequence.html) y la [arquitectura](/diagrams/sales_assignment_system_architecture.md).
+
+## Panel interno
+
+| Área | Propósito |
+|---|---|
+| Resumen | Indicadores operativos y servicios. |
+| Registros | Pendientes, revisión de notas y aceptación explícita de propuestas IA. |
+| Vendedores | Capacidad, zona, disponibilidad y habilidades verificadas. |
+| Asignación | Comparación de métodos y corrección manual de previews. |
+| Auditoría | Decisiones, eventos y explicaciones. |
+| Simulación de lote | Prueba propuestas sin modificar datos. |
+| Comparación histórica | Evalúa métodos sin ejecutar asignaciones. |
+
+Los métodos son Capacity-aware, Fuzzy optimal y AI-assisted. Los controles ajustan afinidad frente a equilibrio y carga relativa frente a montos estimados.
+
+## Inicio rápido
+
+Requisitos: Docker Engine y Docker Compose v2.
 
 ```bash
 cp .env.example .env
 ```
 
-Arranca la aplicación completa desde la raíz. Docker descarga PostgreSQL y Ollama cuando no existen y construye los servicios Python.
+Edita .env y configura valores distintos:
+
+```dotenv
+DATABASE_PASSWORD=una-clave-local-segura
+DATABASE_API_TOKEN=token-interno
+DATABASE_API_ADMIN_TOKEN=token-administrativo-distinto
+EXTERNAL_INGEST_API_TOKEN=token-para-el-portal-externo
+```
+
+Inicia todos los servicios desde la raíz:
 
 ```bash
 docker compose --env-file .env -f project/docker-compose.yml up -d --build --pull always --wait
 ```
 
-En el primer arranque, `database_api` detecta una base vacía, crea el esquema e importa automáticamente los archivos de `normalized/`. La API inicia la preparación de `OLLAMA_MODEL`; si ese modelo no existe en Ollama, descarga `OLLAMA_DEFAULT_MODEL`. El panel puede mostrar “preparando modelo” mientras la descarga termina.
+Una base nueva se inicializa desde normalized. La API descarga OLLAMA_MODEL o, si no existe, OLLAMA_DEFAULT_MODEL.
 
-Abre los servicios locales:
+| Servicio | URL local |
+|---|---|
+| Panel interno | http://localhost:8501 |
+| Portal externo | http://localhost:8600 |
+| API de negocio | http://localhost:8000/docs |
+| Database API | http://localhost:8001/docs |
 
-- Interfaz: http://localhost:8501
-- API de asignación: http://localhost:8000/docs
-- API de base de datos: http://localhost:8001/docs
-
-Para restaurar los datos normalizados en cualquier momento, usa **Administración de datos → Inicializar y reiniciar base de datos** en la barra lateral. Esta acción elimina las asignaciones, propuestas y cambios operativos actuales antes de importar los datos de ejemplo. También puedes hacerlo desde terminal:
-
-```bash
-python scripts/reset_database.py --confirm-reset
-```
-
-Para detener la aplicación sin eliminar la información persistida:
+Detén los servicios sin borrar datos:
 
 ```bash
 docker compose --env-file .env -f project/docker-compose.yml down
 ```
 
-Para eliminar también la base y los modelos descargados, usa `down -v`; el siguiente arranque volverá a inicializar la base y descargar el modelo.
+Para eliminar datos y modelos descargados usa el mismo comando con -v.
 
-### Autoarranque opcional de Ollama desde la API
+## Inicializar datos
 
-Compose es el mecanismo recomendado para crear los contenedores. Si un despliegue local necesita que la API detecte la ausencia del contenedor de Ollama, descargue la imagen y lo inicie, usa el archivo adicional:
+Para restaurar los datos de ejemplo usa **Administración de datos → Inicializar y reiniciar base de datos**. Esta operación elimina asignaciones, previews y cambios operativos antes de importar normalized.
+
+También puedes ejecutar:
 
 ```bash
-docker compose --env-file .env \
-  -f project/docker-compose.yml \
-  -f project/docker-compose.bootstrap.yml up -d --build --pull always --wait
+python scripts/reset_database.py --confirm-reset
 ```
 
-Este modo comparte `/var/run/docker.sock` con la API y debe activarse solo en hosts donde esa capacidad esté permitida. El estado aparece en `GET /services`.
+## Portal externo
 
-## Ejecutar desde el notebook (flujo principal)
+El portal captura empresa, referencia externa, sector, ubicación, monto y nota. Envía POST /external/records a FastAPI con Authorization Bearer y EXTERNAL_INGEST_API_TOKEN.
 
-Desde la raíz del repositorio, crea y activa el entorno Conda:
+external_reference es idempotente: un reintento devuelve el registro existente. FastAPI valida la entrada y la envía a Database API. El portal no accede a vendedores, asignaciones, auditoría, Database API ni PostgreSQL.
+
+El registro se guarda con origen portal_externo, estado nuevo y señales neutrales. Luego aparece en Registros para revisión humana antes de una propuesta de asignación.
+
+En producción utiliza un token externo aleatorio y publica el portal y FastAPI detrás de HTTPS. No expongas PostgreSQL ni Database API.
+
+## Flujo de asignación
+
+1. Se revisan registros y notas con heurística y Ollama.
+2. Las propuestas IA se aceptan, editan o rechazan explícitamente.
+3. Se comparan previews con carga, montos, compatibilidad, exclusiones y motivos.
+4. Los cambios manuales se revalidan contra capacidad, zona, equipo, ausencia, seniority, sector y habilidades.
+5. Solo un preview vigente y aprobado puede ejecutarse; la ejecución es atómica y auditable.
+
+## Desarrollo y pruebas
+
+Python 3.11 para notebooks y utilidades locales:
 
 ```bash
 conda env create -f environment.yml
 conda activate sales-assignment
-python -m ipykernel install --user --name sales-assignment --display-name "Python (sales-assignment)"
 jupyter lab data/normalization_workflow.ipynb
 ```
 
-Selecciona el kernel `Python (sales-assignment)`. Si ya tienes un entorno Python, instala las mismas dependencias con `python -m pip install -r requirements.txt`. Docker y Ollama se administran por separado mediante Docker Compose.
-
-Para actualizar un entorno Conda existente:
+Alternativa:
 
 ```bash
-conda env update -f environment.yml
+python -m pip install -r requirements.txt
+python -m unittest discover -s tests -v
 ```
 
-`requirements.txt` reúne las dependencias del notebook, normalización, Streamlit, FastAPI, PostgreSQL, motor de asignación, servicio LLM y pruebas.
+normalization contiene el pipeline; normalized contiene los datos generados; project contiene APIs, motor, frontend y portal externo; diagrams contiene los diagramas del sistema.
 
-Estas dependencias preparan el desarrollo de los componentes descritos en la arquitectura; no implementan ni arrancan los servicios. PostgreSQL y Ollama son servicios externos. Docker Engine/Compose, `kubectl` y un clúster Kubernetes se instalan por separado; no son paquetes Python. La API de base de datos usa Psycopg y un pool de conexiones. Los rangos de dependencias permiten actualizaciones compatibles; no constituyen un lockfile.
+## Límites conocidos
 
-Abre [`normalization_workflow.ipynb`](data/normalization_workflow.ipynb) en VS Code o Jupyter. Instala `requirements.txt` en el entorno del kernel y ejecuta sus celdas en orden. Puedes revisar las entradas, modificar la fecha efectiva y generar todos los datasets en `normalized/` desde allí. No hace falta que el agente vuelva a ejecutar el pipeline.
-
-Las llamadas al LLM están desactivadas por defecto. El notebook no inicia Docker ni descarga modelos automáticamente. Cambia las opciones de evaluación cuando tú quieras. Las respuestas parciales de pruebas anteriores se conservan; no hay un modelo aceptado ni una evaluación completa finalizada.
-
-## Reproducir desde terminal (alternativa)
-
-Python 3.10+ y Docker Compose:
-
-```bash
-python3 -m venv .venv
-. .venv/bin/activate
-pip install -r requirements.txt
-python3 scripts/normalize_data.py
-python3 scripts/build_note_dataset.py
-python3 -m unittest discover -s tests -v
-
-docker compose --env-file .env -f project/docker-compose.yml up -d llm_service
-docker compose --env-file .env -f project/docker-compose.yml exec -T llm_service ollama pull llama3.2
-export LLM_API_URL=http://localhost:11434
-export LLM_MODEL=llama3.2
-export LLM_TIMEOUT_SECONDS=600
-python3 scripts/evaluate_note_prompt.py
-python3 scripts/evaluate_note_prompt.py --examples normalized/note_holdout.jsonl --output normalized/note_extraction_results_holdout.csv
-python3 scripts/evaluate_note_prompt.py --examples normalized/note_security_evaluation.jsonl --output normalized/note_extraction_results_security.csv
-python3 scripts/evaluate_note_prompt.py --examples normalized/note_context_evaluation.jsonl --output normalized/note_extraction_results_context.csv
-```
-
-`LLM_API_URL` es la URL base de Ollama. Las solicitudes usan `/api/chat`, mensajes separados system/user y el esquema JSON como `format`. Las respuestas esperadas nunca se envían al modelo. No se necesitan credenciales. La imagen de Ollama es configurable con `OLLAMA_IMAGE`; para reproducir un despliegue exacto usar un digest. El modelo y sus opciones se registran con los resultados.
-
-## Auditoría y contratos
-
-- `data/*.csv`: entradas originales, nunca modificadas. `--source` permite otra carpeta con los mismos cinco archivos. El conjunto suministrado ya está extraído; no requiere ZIP.
-- `normalized/*csv`: se retienen todas las filas y columnas originales. Cada campo tiene valor original, valor normalizado, regla y bandera de inferencia. CSV representa null mediante celda vacía; JSON usa null.
-- `--effective-date 2026-09-18`: fecha predeterminada, ausencia inclusiva, fin vacío abierto. Fechas futuras permanecen en los datos.
-- `--config path.json`: configuración opcional `{"city_to_zone":{"bogotá":"Centro"}}`; las claves son ciudades en minúscula. Sin configuración no se infieren zonas por ciudad.
-- Capacidad nula: regla de negocio pendiente. Capacidad cero: ninguna nueva asignación. Números inválidos o negativos se reportan y se conserva el original.
-- `historical_ownership.csv`: un usuario distinto en actividad permite inferir propietario; múltiples usuarios o ID de registro duplicado impiden atribución. No prueba propiedad actual ni asignación óptima.
-- `seller_workload.csv`: cuenta registros asignados/en gestión por propietario inferido, nunca cantidad de actividades. Incluye líderes y vendedores porque ambos aparecen como usuarios comerciales. Inactividad, ausencias, capacidad y datos faltantes se exponen como motivos; no se ejecuta elegibilidad ni asignación.
-- `normalization_report.json`: hashes, conteos reales/esperados, incidencias y registros activos no atribuibles. Los resultados no se fuerzan a los valores esperados.
-- `note_examples.csv`: 167 filas, incluidos los 27 vacíos. `note_examples.jsonl`, `note_training.jsonl` y `note_evaluation.jsonl`: 15 notas únicas, sin inflar el dataset mediante duplicación. Variantes por sector se registran y la falta de sector tiene prueba separada.
-- `normalization/reference_data/` conserva las referencias fuente aprobadas y su manifest. El notebook puede generar `normalized/` desde cero. `normalized/note_golden_review_v1.jsonl` y la aprobación se restauran desde esas referencias solo si faltan; nunca se reemplazan las revisiones existentes. El usuario aprobó el prompt y etiquetas el 2026-09-18; ver `prompt_review_status.json`.
-- `note_holdout.jsonl`: 15 paráfrasis sintéticas, revisadas por el agente contra las interpretaciones aprobadas; no se atribuye revisión humana independiente. No se incorporan al prompt ni al entrenamiento. Inyección y contexto se evalúan por separado.
-- `project/llm_service/promps/note_extraction_v1.md`: prompt aprobado, preservado. Cambios posteriores se guardan en versiones nuevas. `schemas/` contiene el contrato completo.
-- Cada evaluación conserva un directorio único en `normalized/evaluation_runs/` con prompt, ejemplos, esquema, CSV y métricas. Las rutas de resultados de nivel superior son la ejecución más reciente. Una evaluación interrumpida conserva sus respuestas parciales, sin resumen de aceptación.
-- Precisión por campo compara las listas como conjuntos ordenados, pero valida duplicados mediante JSON Schema. Ausentes/extra cuentan como discrepancias. Acciones se comparan en ambos campos espejo. Se reportan afirmaciones no respaldadas respecto a la referencia, además de errores y omisiones.
-- Cero hechos inventados significa cero afirmaciones discrepantes detectadas contra la referencia cerrada; no constituye garantía universal. Las métricas originales son desempeño de desarrollo, no generalización. Holdout sintético e inyección tampoco constituyen una auditoría completa de seguridad.
-
-La aprobación del prompt no equivale a aprobar el modelo. Consultar los resúmenes de evaluación antes de usarlo.
-
-
-## PostgreSQL: reinicio e importación local
-
-La primera ejecución no requiere un comando de importación adicional: `database_api` inicializa una base nueva desde `normalized/`. Para un reinicio manual, ejecuta desde la raíz:
-
-```bash
-docker compose --env-file .env -f project/docker-compose.yml up -d --build --wait database_api api
-python scripts/reset_database.py --confirm-reset
-```
-
-El destino HTTP local es `http://127.0.0.1:8001`; PostgreSQL no publica ningún puerto. La base es `sales_assignment_local`, esquema `sales_assignment`. El script envía la solicitud de reinicio a la API con el token administrativo. Las credenciales están únicamente en `.env`, ignorado por Git. El reinicio es intencionalmente destructivo dentro de ese esquema; las validaciones rechazan entornos no locales/de pruebas y esquemas ajenos. Un fallo revierte también el reemplazo del esquema anterior.
-
-Consulta [configuración, tablas, verificación, pruebas y recuperación](project/database/README.md). El resultado queda en [`normalized/database_import_report.json`](normalized/database_import_report.json).
-
-
-## API de asignación
-
-Configura los dos tokens distintos de `.env.example` y arranca los servicios con el comando anterior. Documentación interactiva: [asignación](http://localhost:8000/docs) y [base de datos](http://localhost:8001/docs).
-
-Los métodos `capacity_aware`, `fuzzy_optimal` y `ai_assisted` generan previews persistidos. Ejecutar un preview requiere `{"approved":true}`; se revalidan el snapshot y las restricciones antes de una transacción atómica. La generación de un preview no asigna registros.
-
-Consulta [modelos, endpoints y limitaciones](project/assignment_engine/README.md). Toda dependencia Python se mantiene en `requirements.txt`; las imágenes seleccionan sus paquetes desde ese mismo archivo.
-
-
-## Interfaz Streamlit
-
-Ejecuta `docker compose --env-file .env -f project/docker-compose.yml up -d --build --wait frontend` y abre http://localhost:8501. Consulta [configuración y flujo de aprobación](project/frontend/README.md). La interfaz se comunica exclusivamente con la API de negocio.
+- Las habilidades técnicas se aplican solo cuando están verificadas.
+- Los montos faltantes no se inventan.
+- La IA propone señales y explicaciones, pero no aprueba ni ejecuta asignaciones.
+- La comparación histórica no modifica asignaciones reales.
