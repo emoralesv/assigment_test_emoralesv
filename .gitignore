@@ -27,5 +27,12 @@ postgres_data/
 *.iso
 *.qcow2
 *.vmdk
+*.mp4
+*.mkv
+*.webm
 *.log
 .ipynb_checkpoints/
+
+# Archivos de video locales; no se versionan ni se publican.
+*.mkv
+*.mp4
